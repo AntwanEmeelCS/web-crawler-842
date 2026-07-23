@@ -1,6 +1,6 @@
 # Web C48 Assignments
 
-This repo is created to contain assignments from Route C48 Frontend Course.
+This repo is created to contain assignments and tutorials from Route C48 Frontend Course.
 
 ## Lecturers:-
 

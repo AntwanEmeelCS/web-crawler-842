@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 1: Antwan's Portfolio</title>
+  </head>
+  <body>
+    <table align="center" border="0">
+      <tr>
+        <td align="center" colspan="2">
+          <h1 style="color: darkblue">Antwan Emeel's Portfolio</h1>
+          <p style="color: darkblue">Beginner Web Developer</p>
+        </td>
+      </tr>
+      <tr>
+        <td align="left" colspan="2">
+          <h2 style="color: darkblue">About Me</h2>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="./PortfolioImage.jpg"
+            alt="Antwan Emeel"
+            width="200"
+            border="1"
+          />
+        </td>
+        <td align="left">
+          <p>
+            Hello! My name is Antwan Emeel, and I am a beginner web developer. I
+            have a passion for creating beautiful and functional websites. I am
+            constantly learning new technologies and improving my skills to
+            become a better developer.
+          </p>
+          <h3 style="background-color: aquamarine">Skills</h3>
+          <ul>
+            <li>C#</li>
+            <li>Sql Server</li>
+            <li>HTML</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td align="left" colspan="2">
+          <h2 style="color: darkblue">Experience Timeline</h2>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <table border="1">
+            <thead>
+              <tr>
+                <th style="color: darkblue; background-color: lightgray">
+                  Company Name
+                </th>
+                <th style="color: darkblue; background-color: lightgray">
+                  Company Logo
+                </th>
+                <th style="color: darkblue; background-color: lightgray">
+                  Role
+                </th>
+                <th style="color: darkblue; background-color: lightgray">
+                  Achievements
+                </th>
+                <th style="color: darkblue; background-color: lightgray">
+                  Duration
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SDEDC Company</td>
+                <td>
+                  <img src="./sdedcLogo.jpg" alt="SDEDC Logo" width="100" />
+                </td>
+                <td>Desktop App Programmer</td>
+                <td>
+                  Assisted in developing and maintaining some of the company
+                  applications along with adding new features.
+                </td>
+                <td>September 2021 - Now</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td align="left" colspan="2">
+          <h2 style="color: darkblue">Contact Me</h2>
+          <p>
+            Feel free to reach out to me using the form below. I'd love to hear
+            from you!
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td align="left" colspan="2">
+          <form>
+            <fieldset>
+              <legend>Personal Information</legend>
+              <table border="0">
+                <tr>
+                  <td>
+                    <label for="FirstName"
+                      >First Name: <span style="color: red">*</span></label
+                    >
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="FirstName"
+                      name="FirstName"
+                      required
+                    />
+                  </td>
+                  <td>
+                    <label for="LastName"
+                      >Last Name: <span style="color: red">*</span></label
+                    >
+                  </td>
+                  <td>
+                    <input type="text" id="LastName" name="LastName" required />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="email"
+                      >Email: <span style="color: red">*</span></label
+                    >
+                  </td>
+                  <td>
+                    <input type="email" id="email" name="email" required />
+                  </td>
+                  <td>
+                    <label for="PhoneNumber">Phone Number:</label>
+                  </td>
+                  <td>
+                    <input
+                      type="tel"
+                      id="PhoneNumber"
+                      name="PhoneNumber"
+                    /><br /><br />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="PreferredMeetingDate"
+                      >Preferred Meeting Date:</label
+                    >
+                  </td>
+                  <td>
+                    <input
+                      type="date"
+                      id="PreferredMeetingDate"
+                      name="PreferredMeetingDate"
+                    />
+                  </td>
+                  <td>
+                    <label for="PreferredMeetingTime"
+                      >Preferred Meeting Time:</label
+                    >
+                  </td>
+                  <td>
+                    <input
+                      type="time"
+                      id="PreferredMeetingTime"
+                      name="PreferredMeetingTime"
+                    /><br /><br />
+                  </td>
+                </tr>
+              </table>
+            </fieldset>
+            <fieldset>
+              <legend>Project Details</legend>
+              <table border="0">
+                <tr>
+                  <td>
+                    <label for="ProjectType"
+                      >Project Type: <span style="color: red">*</span></label
+                    >
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="ProjectType"
+                      name="ProjectType"
+                      required
+                    />
+                  </td>
+                  <td>
+                    <label for="ProjectDescription"
+                      >Project Description: <span style="color: red">*</span>
+                    </label>
+                  </td>
+                  <td>
+                    <textarea
+                      id="ProjectDescription"
+                      name="ProjectDescription"
+                      placeholder="Please provide a brief description of your project..."
+                      required
+                    ></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label for="BudgetRangeDollars">Budget Range:</label><br />
+                    <input
+                      type="radio"
+                      value="0-1000"
+                      name="BudgetRangeDollars"
+                    />
+                    <label for="0-1000">Under $5,000</label><br />
+                    <input
+                      type="radio"
+                      value="5000-10000"
+                      name="BudgetRangeDollars"
+                    />
+                    <label for="5000-10000">$5,000 - $10,000</label><br />
+                    <input
+                      type="radio"
+                      value="10000-25000"
+                      name="BudgetRangeDollars"
+                    />
+                    <label for="10000-25000">$10,000 - $25,000</label><br />
+                    <input
+                      type="radio"
+                      value="25000+"
+                      name="BudgetRangeDollars"
+                    />
+                    <label for="25000+">$25,000+</label>
+                  </td>
+                  <td>
+                    <label for="ServicesRequired">Services Required:</label
+                    ><br />
+
+                    <input
+                      type="checkbox"
+                      value="UIUX"
+                      name="ServicesRequired"
+                    />
+                    <label for="UIUX">UI/UX Design</label><br />
+
+                    <input
+                      type="checkbox"
+                      value="FrontendDevelopment"
+                      name="ServicesRequired"
+                    />
+                    <label for="FrontendDevelopment">Frontend Development</label
+                    ><br />
+
+                    <input
+                      type="checkbox"
+                      value="BackendDevelopment"
+                      name="ServicesRequired"
+                    />
+                    <label for="BackendDevelopment">Backend Development</label
+                    ><br />
+
+                    <input
+                      type="checkbox"
+                      value="HousingDeployment"
+                      name="ServicesRequired"
+                    />
+                    <label for="HousingDeployment">Housing & Deployment</label
+                    ><br />
+
+                    <input
+                      type="checkbox"
+                      value="MaintenanceSupport"
+                      name="ServicesRequired"
+                    />
+                    <label for="MaintenanceSupport">Maintenance & Support</label
+                    ><br />
+                  </td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="2">
+                    <label for="HowDidYouHearAboutMe"
+                      >How did you hear about Me?</label
+                    >
+                    <select
+                      name="HowDidYouHearAboutMe"
+                      id="HowDidYouHearAboutMe"
+                    >
+                      <option value="" disabled selected>
+                        Select an option
+                      </option>
+                      <option value="SocialMedia">
+                        Social Media (Facebook, Instagram ... etc)
+                      </option>
+                      <option value="SearchEngine">
+                        Search Engine (Google, Bing ... etc)
+                      </option>
+                      <option value="Referral">Referral</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="submit"
+                      value="Send Data"
+                      style="background-color: #00aa00"
+                    />
+                    <input
+                      type="reset"
+                      value="Clear Form"
+                      style="background-color: #aa0000"
+                    />
+                  </td>
+                </tr>
+              </table>
+            </fieldset>
+          </form>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

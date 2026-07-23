@@ -1,0 +1,174 @@
+/* 
+    Conversions between rem and px are based on oot font-size of 16
+    you can refer to https://nekocalc.com/rem-to-px-converter
+*/
+
+/* ===========================
+   General Page
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background:#eef3fa;
+    color:#23384d;
+    line-height:1.6;
+}
+
+/* ===========================
+   Main Heading
+=========================== */
+
+.mainHeading{
+    background:#0b3c6d;
+    color:white;
+    text-align:center;
+    padding:35px 20px;
+    margin-bottom:40px;
+}
+
+.mainHeading h1{
+    font-size:2.2rem; /* 35.2px */
+    font-weight:600;
+}
+
+/* ===========================
+   Student Information
+=========================== */
+.studentInfo{
+    margin:20px auto 10px;
+    padding:15px;
+    width:min(900px,92%);
+    background:#174f88;
+    color:white;
+    border:1px solid #d7e4f2;
+    border-radius:10px;
+}
+
+.studentInfo h2{
+    font-size:1.35rem; /* 21.6px */
+    font-weight:600;
+}
+
+.studentName,
+.studentPhone,
+.studentGroup{
+    margin:8px 0;
+    padding:10px 15px;
+
+    background:white;
+    border-left:4px solid #174f88;
+    border-radius:6px;
+
+    color:#23384d;
+}
+
+.studentInfo strong{
+    color:#174f88;
+}
+
+/* ===========================
+   Instructor Card
+=========================== */
+
+.instructorContent{
+    width:min(900px,92%);
+    margin:0 auto 35px;
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    background-color: #f5f9ff;
+    transition:.25s;
+}
+/* Apply on hover
+   1) fill the whole box by background color 
+   2) move slightly on vertical axis
+   3) changes aren't made instantly, revise transition of the parent
+*/
+.instructorContent:hover{
+    transform:translateY(-3px);
+    background-color: #f5fAff;
+}
+
+/* ===========================
+   Instructor Header
+=========================== */
+
+.instructorName{
+    background:#174f88;
+    color:white;
+    padding:18px 25px;
+}
+
+.instructorName h2{
+    font-size:1.35rem; /* 21.6px */
+    font-weight:600;
+}
+
+/* ===========================
+   Assignment Section
+=========================== */
+
+.exerciseList{
+    padding:20px 35px;
+}
+
+.assignmentList{
+    padding-left:25px;
+}
+
+.assignmentItem{
+    margin:14px 0;
+}
+
+/* ===========================
+   Links
+=========================== */
+
+.assignmentItem a{
+    display:block;
+    text-decoration:none;
+    color:#0d3d69;
+    background:#f5f9ff;
+    border-left:5px solid #174f88;
+    padding:12px 16px;
+    border-radius:8px;
+    transition:.25s;
+    font-weight:500;
+}
+/* Apply on hover
+   1) fill the whole box by background color (blue), text color to (white)
+   2) move slightly on horizontal axis
+   3) changes aren't made instantly, revise transition of the parent
+*/
+.assignmentItem a:hover{
+    background:#174f88;
+    color:white;
+    transform:translateX(6px);
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width:600px){
+
+    .mainHeading h1{
+        font-size:1.6rem; /* 25.6px */
+    }
+
+    .instructorName h2{
+        font-size:1.15rem; /* 18.4px */
+    }
+.studentInfo h2{
+        font-size:1.15rem; /* 18.4px */
+    }
+    .exerciseList{
+        padding:18px;
+    }
+}
