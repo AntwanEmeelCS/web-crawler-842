@@ -1,11 +1,4 @@
-# Web C48 Assignments
+# web-crawler-842
 
-This repo is created to contain assignments and tutorials from Route C48 Frontend Course.
+This repo is created to contain testing projects from content over the internet
 
-## Lecturers:-
-
-1) Eng. Yasmin Lotfy
-
-## Mentors:-
-
-1) Eng. Ahmed Wessam
