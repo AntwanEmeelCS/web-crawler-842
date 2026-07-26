@@ -1,0 +1,49 @@
+/* medium screen size */
+
+@media screen and (min-width: 850px) {
+    
+    .myNavBar .navLeft {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .myNavBar .navLeft ul
+    {
+        list-style-type: none;
+        display: flex;
+        justify-content: flex-end;
+        
+    }
+
+    .myNavBar .navLeft ul li
+    {
+        padding: 10px;
+    }
+
+    .myNavBar .navLeft ul li a{
+        text-decoration: none;
+    }
+
+    .myNavBar .navLeft ul li .homeLink{
+        color: #8A22FE;
+        text-decoration: underline;
+    }
+
+    .myNavBar .navLeft ul li .linkOther{
+        color: black;
+        transition: 1s text-decoration;
+    }
+
+    .myNavBar .navLeft ul li .linkOther:hover
+    {
+        color: #8A22FE;
+        text-decoration: underline;
+    }
+}
+
+/* large screen size */
+
+@media screen and (min-width: 1024px) {
+    
+}

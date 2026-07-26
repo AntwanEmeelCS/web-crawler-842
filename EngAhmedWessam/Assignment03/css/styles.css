@@ -1,0 +1,109 @@
+/* General Configuration */
+
+* {
+    /* margins are taken from inside */
+  box-sizing: border-box; 
+  margin: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 60px;
+}
+
+/* Nav Bar */
+.myNavBar
+{
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+
+    background-color: #F5F3FF;
+    padding: 0 20px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+/* I mis-named divisions here: navRight is on the left and navLeft is on the right */
+.myNavBar .navRight
+{
+   display: flex;
+   align-items: left;
+}
+
+.myNavBar .navRight .helicopterIcon{
+    background-color: #8E51FF;
+    border-radius: 10px;
+    font-size: 30px;
+    width: 55px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.myNavBar .navRight .helicopterIcon i{
+    color: white; 
+}
+
+.myNavBar .navRight .pTitle
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+}
+.myNavBar .navRight .pTitle p{
+
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.myNavBar .navLeft {
+    display: none;
+}
+
+
+/* Home part */
+.homeDiv
+{
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.homeDiv .productImage
+{
+    padding: 30px;
+    width: 80%;
+    border: 1px solid #E1E3E7;
+    border-radius: 20px;
+    position: relative;
+}
+
+.homeDiv .productImage img
+{
+    border: 1px solid #E1E3E7;
+    width: 100%;
+    border-radius: 20px;
+
+}
+
+.homeDiv .productImage::after
+{
+    position: absolute;
+    content: '12% Off';
+    background-color: #8E51FF;
+    top: 50px;
+    left: 50px;
+    font-weight: bold;
+    opacity: 1;
+    border-radius: 15px;
+    padding: 10px;
+}
