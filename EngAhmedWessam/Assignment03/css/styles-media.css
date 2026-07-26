@@ -40,6 +40,23 @@
         color: #8A22FE;
         text-decoration: underline;
     }
+
+    /* Home part */
+    .homeDiv
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .homeDiv .productImage
+    {
+        width: 40%;
+    }
+    .productDetails{
+        margin-top: 0;
+        width: 60%;
+    }
 }
 
 /* large screen size */
