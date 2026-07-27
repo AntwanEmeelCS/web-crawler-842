@@ -198,17 +198,22 @@ body {
     width: 90%;
     transition: 0.2s all;
     margin: auto;
-    padding: 10px;
+    padding: 5px;
 }
 .productDetails .btnAddToCart button,
 .productDetails .btnAddToFavourites button
 {
     width: 100%;
     border-radius: 25px;
-    padding: 20px;
+    padding: 10px;
     font-size: 18px;
 }
 
+.productDetails .btnAddToCart button i,
+.productDetails .btnAddToFavourites button i
+{
+    margin: 10px;
+}
 .productDetails .btnAddToFavourites button
 {
     background-color: white;
@@ -230,7 +235,11 @@ body {
     scale: 1.05;
     cursor: pointer ;
 }
-
+.productDetails .btnAddToCart button:hover,
+.productDetails .btnAddToFavourites button:hover
+{
+    cursor: pointer ;
+}
 /* how we compare */
 .howWeCompare{
      margin-top: 50px;
@@ -336,6 +345,19 @@ margin: auto;
     background-color: #EDE9FE;
 }
 
+.howWeCompare .comparisonTableContainer table .comparisonTableOurProduct .ourProductInfoPiece{
+    border-radius: 20px;
+    padding: 10px;
+    margin: auto;
+    width: fit-content;
+    background-color: #8E51FF;
+    color: white;
+    font-weight: bold;
+}
+
+.howWeCompare .comparisonTableContainer table .comparisonTableOurProduct .ourProductInfoPiece i{
+    padding: 2px;
+}
 .howWeCompare .comparisonTableContainer table .comparisonTableLastRow .comparisonTableOurProductLast{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -431,3 +453,408 @@ margin: auto;
 }
 
 /* What Our Customers Say */
+
+.ourCustomersSay
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    margin: auto;
+}
+
+.ourCustomersSay .customersSayH2
+{
+   padding: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+.ourCustomersSay .customersSayH2 h2
+{
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.ourCustomersSay .customersSayH2 h2 span{
+    color: #7F22FE;
+}
+
+.ourCustomersSay .customerSayP{
+   
+padding: 10px;
+    margin: auto;
+    
+}
+
+.ourCustomersSay .customerSayP p
+{
+    text-align: center;
+    font-size: 20px;
+}
+
+.ourCustomersSay .ratingReview{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.ourCustomersSay .ratingReview .ratingCard
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: 2px solid #9cb2de;
+    border-radius: 20px;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .ratingDegree
+{
+    margin: 20px auto 10px auto;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .ratingDegree p
+{
+    font-size: 60px;
+    font-weight: bold;
+
+}
+
+.ourCustomersSay .ratingReview .ratingCard .ratingStars
+{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .ratingStars i
+{
+    color: #FDC700;
+    font-size: 24px;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .ratingCount
+{
+    margin: auto;
+    padding: 10px;
+
+}
+
+.ourCustomersSay .ratingReview .ratingCard .ratingCount p
+{
+    font-size: 16px;
+}
+/* detailed ratings */
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings
+{
+    /* margin: auto; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating1,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating2,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating3,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating4,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating5
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating1 .ratingP,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating1 .percentageP,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating2 .ratingP,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating2 .percentageP,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating3 .ratingP,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating3 .percentageP,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating4 .ratingP,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating4 .percentageP,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating5 .ratingP,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating5 .percentageP
+{
+    padding: 10px;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating1 .progressBackAll,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating2 .progressBackAll,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating3 .progressBackAll,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating4 .progressBackAll,
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .rating5 .progressBackAll
+{
+    background-color: #E5E7EB;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    padding: 1px;
+    width: 100%;
+    flex: 1;
+    height: 80%;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .progressBackAll .progressPercentage
+{
+    color: #F0B100;
+    height: 100%;        
+    background-color:#F0B100; 
+    border-radius: 20px;
+}
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .progressBackAll .progressPercentage5
+{
+    width: 78%;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .progressBackAll .progressPercentage4
+{
+    width: 15%;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .progressBackAll .progressPercentage3
+{
+    width: 5%;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .progressBackAll .progressPercentage2
+{
+    width: 1.5%;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .progressBackAll .progressPercentage1
+{
+    width: 0.5%;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .detailedRatings .ratingCardSepLine
+{
+    background-color: violet;
+    width: 80%;
+    height: 2px;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .ratingCardSepLine
+{
+    
+    background-color: #9cb2de;
+    width: 90%;
+    padding: 1px;
+    margin: 5px 5px 20px 5px;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .generalRating
+{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    padding: 15px;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .generalRating .wouldRecommend
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+
+.ourCustomersSay .ratingReview .ratingCard .generalRating .wouldRecommend .wouldRecommendPercentage p,
+.ourCustomersSay .ratingReview .ratingCard .generalRating .qualityRating .qualityRatingDegree p
+{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.ourCustomersSay .ratingReview .ratingCard .generalRating .wouldRecommend .wouldRecommendP p,
+.ourCustomersSay .ratingReview .ratingCard .generalRating .qualityRating .qualityRatingP p
+{
+    font-size: 14px;
+    padding: 5px;
+}
+
+
+
+.ourCustomersSay .ratingReview .ratingCard .generalRating .qualityRating
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.ourCustomersSay .ratingReview .reviewCards
+{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 100%;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard
+{
+    padding: 15px;
+    border: 2px solid #9cb2de;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    margin: 15px 0;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading
+{
+    display: flex;
+    flex-direction: row; 
+    padding: 10px;
+    width: 100%;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewerAvatar
+{
+    margin: 15px;
+    width:70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewerAvatar img{
+    
+    width: 70px;
+    border: 1px solid black;
+    border-radius: 35px;
+}
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewerInfo
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewerInfo .reviewerName
+{
+    padding: 5px;    
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewerInfo .reviewerName p{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewerInfo .reviewerJob
+{
+    padding: 5px;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewerInfo .reviewerJob p{
+    font-size: 16px;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewerInfo .reviewerRating
+{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewerInfo .reviewerRating .reviewerRatingStars
+{
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+    color: #FDC700;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewerInfo .reviewerRating .reviewerRatingNumber
+{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewerInfo .reviewerRating .reviewerRatingNumber p
+{
+    font-size: 14px;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewMiscInfo
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewMiscInfo .isVerifiedPurchase
+{
+    background-color: #EDE9FE;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewMiscInfo .isVerifiedPurchase p{
+    color: #5D0EC0;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewMiscInfo .reviewDate
+{
+    padding: 5px;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewCardHeading .reviewMiscInfo .reviewDate p{
+    font-size: 14px;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewContent
+{
+    padding: 10px 10px 10px 20px;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .reviewCard .reviewContent p
+{
+    font-size: 18px;
+    color: #202020;
+    line-height: 1.5; /* a wider line spacing */
+}
+
+.ourCustomersSay .ratingReview .reviewCards .btnLoadMoreReviews
+{
+    width: 50%;
+    transition: 0.2s all;
+    margin: auto;
+    padding: 10px;
+    
+}
+.ourCustomersSay .ratingReview .reviewCards .btnLoadMoreReviews button
+{
+    width: 100%;
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 18px;
+    background-color: #8E51FF;
+    color: white;
+}
+
+.ourCustomersSay .ratingReview .reviewCards .btnLoadMoreReviews button:hover
+{
+    cursor: pointer ;
+    background-color: white;
+    color: #8E51FF;
+}
+
+/* complete your setup */
