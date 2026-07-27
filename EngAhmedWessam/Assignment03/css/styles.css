@@ -483,7 +483,7 @@ margin: auto;
 
 .ourCustomersSay .customerSayP{
    
-padding: 10px;
+    padding: 10px;
     margin: auto;
     
 }
@@ -858,3 +858,183 @@ padding: 10px;
 }
 
 /* complete your setup */
+.setupBK
+{
+    background-color: #F7F5FF;
+    width: 100%;
+}
+
+.setupBK .setupDiv
+{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+
+.setupBK .setupDiv .setupH2
+{
+   padding: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+.setupBK .setupDiv .setupH2 h2
+{
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.setupBK .setupDiv .setupH2 h2 span{
+    color: #7F22FE;
+}
+
+.setupBK .setupDiv .setupP{
+   
+    padding: 10px;
+    margin: auto;
+    
+}
+
+.setupBK .setupDiv .setupP p
+{
+    text-align: center;
+    font-size: 20px;
+}
+
+.setupBK .setupDiv .relativesCards
+{
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.setupBK .setupDiv .relativesCards .relativeCard
+{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid violet;
+    text-align: center;
+}
+
+.setupBK .setupDiv .relativesCards .relativeCard .relativeImage
+{
+    margin: 10px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    width: 100%;
+}
+
+.setupBK .setupDiv .relativesCards .relativeCard .relativeImage img{
+    border-radius: 10px;
+    width: 100%;
+}
+
+.setupBK .setupDiv .relativesCards .relativeCard .relativeInfo
+{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+}
+
+.setupBK .setupDiv .relativesCards .relativeCard .relativeInfo .relativeName,
+.setupBK .setupDiv .relativesCards .relativeCard .relativeInfo .relativeDesc
+{
+    padding: 5px;
+    margin: 5px;
+}
+
+.setupBK .setupDiv .relativesCards .relativeCard .relativeInfo .relativeName h3
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.setupBK .setupDiv .relativesCards .relativeCard .relativeInfo .relativeDesc p
+{
+    font-size: 16px;
+}
+
+.setupBK .setupDiv .relativesCards .relativeCard .relativeInfo .relativeCardBottom
+{
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.setupBK .setupDiv .relativesCards .relativeCard .relativeInfo .relativeCardBottom .relativePrice p
+{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.setupBK .setupDiv .relativesCards .relativeCard .relativeInfo .relativeCardBottom .btnAddRelativeToCart
+{
+    border: none;
+}
+.setupBK .setupDiv .relativesCards .relativeCard .relativeInfo .relativeCardBottom .btnAddRelativeToCart button
+{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: #8E51FF;
+    cursor: pointer;
+}
+
+
+
+
+.setupBK .btnViewAllAccessories
+{
+    width: 50%;
+    transition: 0.2s all;
+    margin: auto;
+    padding: 10px;
+}
+
+.setupBK .btnViewAllAccessories:hover
+{
+    cursor: pointer ;
+    background-color: white;
+    color: #8E51FF;
+}
+
+.setupBK .btnViewAllAccessories button
+{
+    width: 100%;
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 18px;
+    background-color: #8E51FF;
+    color: white;
+}
+
+.setupBK .btnViewAllAccessories button:hover
+{
+    cursor: pointer ;
+    background-color: white;
+    color: #8E51FF;
+}

@@ -86,10 +86,38 @@
 
         
     }
+
+    /* Relatives */
+    .setupBK .setupDiv .relativesCards
+    {
+        padding: 20px;
+        margin: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        
+    }
+
+    .setupBK .setupDiv .relativesCards .relativeCard
+    {
+        width: 46%;
+    }
 }
 
 /* large screen size */
 
 @media screen and (min-width: 1024px) {
-    
+    /* relatives */
+    .setupBK .setupDiv .relativesCards
+    {
+        padding: 20px;
+        margin: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        flex-wrap: nowrap;
+    }
 }
