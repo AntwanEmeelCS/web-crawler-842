@@ -939,6 +939,7 @@ margin: auto;
     border-radius: 10px;
     border: 1px solid transparent;
     width: 100%;
+    position: relative;
 }
 
 .setupBK .setupDiv .relativesCards .relativeCard .relativeImage img{
@@ -946,6 +947,37 @@ margin: auto;
     width: 100%;
 }
 
+.setupBK .setupDiv .relativesCards .relativeCard .relativeImage p
+{
+    position: absolute;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    
+    top: 10px;
+    left: 10px;
+    border-radius: 10px;
+}
+
+.setupBK .setupDiv .relativesCards .relativeCard .relativeImage .overlay1
+{
+    background-color: #00BBA7;
+}
+
+.setupBK .setupDiv .relativesCards .relativeCard .relativeImage .overlay2
+{
+    background-color: #00C950;
+}
+
+.setupBK .setupDiv .relativesCards .relativeCard .relativeImage .overlay3
+{
+    background-color: #00B8DB;
+}
+
+.setupBK .setupDiv .relativesCards .relativeCard .relativeImage .overlay4
+{
+    background-color: #FF6900;
+}
 .setupBK .setupDiv .relativesCards .relativeCard .relativeInfo
 {
     margin: 10px;
@@ -1037,4 +1069,14 @@ margin: auto;
     cursor: pointer ;
     background-color: white;
     color: #8E51FF;
+}
+
+/* site links */
+.siteLinks
+{
+    background-color: #101828;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
 }
