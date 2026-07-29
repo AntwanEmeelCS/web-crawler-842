@@ -1,123 +1,141 @@
 /* medium screen size */
 
 @media screen and (min-width: 850px) {
-    
-    .myNavBar .navLeft {
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-    }
+  .myNavBar .navLeft {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
 
-    .myNavBar .navLeft ul
-    {
-        list-style-type: none;
-        display: flex;
-        justify-content: flex-end;
-        
-    }
+  .myNavBar .navLeft ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+  }
 
-    .myNavBar .navLeft ul li
-    {
-        padding: 10px;
-    }
+  .myNavBar .navLeft ul li {
+    padding: 10px;
+  }
 
-    .myNavBar .navLeft ul li a{
-        text-decoration: none;
-    }
+  .myNavBar .navLeft ul li a {
+    text-decoration: none;
+  }
 
-    .myNavBar .navLeft ul li .homeLink{
-        color: #8A22FE;
-        text-decoration: underline;
-    }
+  .myNavBar .navLeft ul li .homeLink {
+    color: #8a22fe;
+    text-decoration: underline;
+  }
 
-    .myNavBar .navLeft ul li .linkOther{
-        color: black;
-        transition: 1s text-decoration;
-    }
+  .myNavBar .navLeft ul li .linkOther {
+    color: black;
+    transition: 1s text-decoration;
+  }
 
-    .myNavBar .navLeft ul li .linkOther:hover
-    {
-        color: #8A22FE;
-        text-decoration: underline;
-    }
+  .myNavBar .navLeft ul li .linkOther:hover {
+    color: #8a22fe;
+    text-decoration: underline;
+  }
 
-    /* Home part */
-    .homeDiv
-    {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
+  /* Home part */
+  .homeDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 
-    .homeDiv .productImage
-    {
-        width: 40%;
-    }
-    .productDetails{
-        margin-top: 0;
-        width: 60%;
-    }
-    /* customer say */
-    .ourCustomersSay .ratingReview{
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-    }
+  .homeDiv .productImage {
+    width: 40%;
+  }
+  .productDetails {
+    margin-top: 0;
+    width: 60%;
+  }
+  /* customer say */
+  .ourCustomersSay .ratingReview {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
 
-    .ourCustomersSay .ratingReview .ratingCard
-    {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 35%;
-        margin: 35px;
-        /* Sticking this wile scrolling the other part */
-        position: sticky;
-        top:70px;
-        
-    }
+  .ourCustomersSay .ratingReview .ratingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+    margin: 35px;
+    /* Sticking this wile scrolling the other part */
+    position: sticky;
+    top: 70px;
+  }
 
-    .ourCustomersSay .ratingReview .reviewCards
-    {
-        display: flex;
-        flex-direction: column;
-        margin: 20px;
-        width: 65%;
+  .ourCustomersSay .ratingReview .reviewCards {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 65%;
+  }
 
-        
-    }
+  /* Relatives */
+  .setupBK .setupDiv .relativesCards {
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+  }
 
-    /* Relatives */
-    .setupBK .setupDiv .relativesCards
-    {
-        padding: 20px;
-        margin: 20px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        width: 100%;
-        
-    }
+  .setupBK .setupDiv .relativesCards .relativeCard {
+    width: 46%;
+  }
 
-    .setupBK .setupDiv .relativesCards .relativeCard
-    {
-        width: 46%;
-    }
+  /* site links */
+  .siteLinks .linksContent {
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+  }
+
+  .siteLinks .linksContent .siteSocialMedia,
+  .siteLinks .linksContent .productList,
+  .siteLinks .linksContent .supportList,
+  .siteLinks .linksContent .companyList {
+    width: 46%;
+  }
+  .siteLinks .copyrightsAndPayments {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 /* large screen size */
 
 @media screen and (min-width: 1024px) {
-    /* relatives */
-    .setupBK .setupDiv .relativesCards
-    {
-        padding: 20px;
-        margin: 20px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-        flex-wrap: nowrap;
-    }
+  /* relatives */
+  .setupBK .setupDiv .relativesCards {
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  /* site links */
+  .siteLinks .linksContent {
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+  }
 }
