@@ -1,0 +1,201 @@
+@media screen and (min-width: 768px) {
+  /* general part */
+  .paddingT3 {
+    padding: 24px;
+  }
+
+  /* page container */
+  .mainContainer {
+    grid-template-areas: "sidebar info info info info info info info info info info info info info info info info info info info";
+  }
+  /* side bar */
+  .mainContainer .sideBar {
+    display: block;
+  }
+  /* financials */
+  /* done with approximate sizes of 65 rows * 6 columns  */
+  .mainContainer .financials {
+    grid-template-areas:
+      "subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo"
+      "subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo"
+      "subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo"
+      "subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo"
+      "subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo"
+      "currentBalance currentBalance income income payments payments"
+      "currentBalance currentBalance income income payments payments"
+      "currentBalance currentBalance income income payments payments"
+      "currentBalance currentBalance income income payments payments"
+      "currentBalance currentBalance income income payments payments"
+      "currentBalance currentBalance income income payments payments"
+      "currentBalance currentBalance income income payments payments"
+      "recentActivity recentActivity recentActivity incomeVsPayments incomeVsPayments incomeVsPayments"
+      "recentActivity recentActivity recentActivity incomeVsPayments incomeVsPayments incomeVsPayments"
+      "recentActivity recentActivity recentActivity incomeVsPayments incomeVsPayments incomeVsPayments"
+      "recentActivity recentActivity recentActivity incomeVsPayments incomeVsPayments incomeVsPayments"
+      "recentActivity recentActivity recentActivity incomeVsPayments incomeVsPayments incomeVsPayments"
+      "recentActivity recentActivity recentActivity incomeVsPayments incomeVsPayments incomeVsPayments"
+      "recentActivity recentActivity recentActivity incomeVsPayments incomeVsPayments incomeVsPayments"
+      "recentActivity recentActivity recentActivity incomeVsPayments incomeVsPayments incomeVsPayments"
+      "recentActivity recentActivity recentActivity incomeVsPayments incomeVsPayments incomeVsPayments"
+      "recentActivity recentActivity recentActivity incomeVsPayments incomeVsPayments incomeVsPayments"
+      "recentActivity recentActivity recentActivity incomeVsPayments incomeVsPayments incomeVsPayments"
+      "recentActivity recentActivity recentActivity incomeVsPayments incomeVsPayments incomeVsPayments"
+      "recentActivity recentActivity recentActivity incomeVsPayments incomeVsPayments incomeVsPayments"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills monthlyBills accountBalance accountBalance accountBalance"
+      "monthlyBills monthlyBills monthlyBills accountBalance accountBalance accountBalance"
+      "monthlyBills monthlyBills monthlyBills accountBalance accountBalance accountBalance"
+      "monthlyBills monthlyBills monthlyBills accountBalance accountBalance accountBalance"
+      "monthlyBills monthlyBills monthlyBills accountBalance accountBalance accountBalance"
+      "monthlyBills monthlyBills monthlyBills accountBalance accountBalance accountBalance"
+      "monthlyBills monthlyBills monthlyBills accountBalance accountBalance accountBalance"
+      "monthlyBills monthlyBills monthlyBills accountBalance accountBalance accountBalance"
+      "monthlyBills monthlyBills monthlyBills accountBalance accountBalance accountBalance"
+      "monthlyBills monthlyBills monthlyBills accountBalance accountBalance accountBalance"
+      "monthlyBills monthlyBills monthlyBills accountBalance accountBalance accountBalance"
+      "monthlyBills monthlyBills monthlyBills accountBalance accountBalance accountBalance"
+      "monthlyBills monthlyBills monthlyBills accountBalance accountBalance accountBalance"
+      "monthlyBills monthlyBills monthlyBills accountBalance accountBalance accountBalance"
+      "monthlyBills monthlyBills monthlyBills accountBalance accountBalance accountBalance"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods"
+      "budgetOverview budgetOverview budgetOverview paymentMethods paymentMethods paymentMethods";
+  }
+  /* testing part */
+  .bkWhite {
+    background-color: tomato;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  /* page container */
+  .mainContainer {
+    grid-template-areas: "sidebar info info info info info";
+  }
+  /* side bar */
+  .mainContainer .sideBar {
+    display: block;
+  }
+  /* financials */
+  /* done with approximate sizes of 64 rows * 6 columns  */
+  .mainContainer .financials {
+    grid-template-areas:
+      "subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo"
+      "subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo"
+      "subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo"
+      "subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo"
+      "subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo subscriberInfo"
+      "currentBalance currentBalance income income payments payments"
+      "currentBalance currentBalance income income payments payments"
+      "currentBalance currentBalance income income payments payments"
+      "currentBalance currentBalance income income payments payments"
+      "currentBalance currentBalance income income payments payments"
+      "currentBalance currentBalance income income payments payments"
+      "recentActivity recentActivity recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentActivity recentActivity recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentActivity recentActivity recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentActivity recentActivity recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentActivity recentActivity recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentActivity recentActivity recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentActivity recentActivity recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentActivity recentActivity recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentActivity recentActivity recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentActivity recentActivity recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentActivity recentActivity recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentActivity recentActivity recentTransactions recentTransactions recentTransactions recentTransactions"
+      "recentActivity recentActivity recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills recentTransactions recentTransactions recentTransactions recentTransactions"
+      "monthlyBills monthlyBills recentTransactions recentTransactions recentTransactions recentTransactions"
+      "budgetOverview budgetOverview incomeVsPayments incomeVsPayments paymentMethods paymentMethods"
+      "budgetOverview budgetOverview incomeVsPayments incomeVsPayments paymentMethods paymentMethods"
+      "budgetOverview budgetOverview incomeVsPayments incomeVsPayments paymentMethods paymentMethods"
+      "budgetOverview budgetOverview incomeVsPayments incomeVsPayments paymentMethods paymentMethods"
+      "budgetOverview budgetOverview incomeVsPayments incomeVsPayments paymentMethods paymentMethods"
+      "budgetOverview budgetOverview incomeVsPayments incomeVsPayments paymentMethods paymentMethods"
+      "budgetOverview budgetOverview incomeVsPayments incomeVsPayments paymentMethods paymentMethods"
+      "budgetOverview budgetOverview incomeVsPayments incomeVsPayments paymentMethods paymentMethods"
+      "budgetOverview budgetOverview incomeVsPayments incomeVsPayments paymentMethods paymentMethods"
+      "budgetOverview budgetOverview incomeVsPayments incomeVsPayments paymentMethods paymentMethods"
+      "budgetOverview budgetOverview incomeVsPayments incomeVsPayments paymentMethods paymentMethods"
+      "budgetOverview budgetOverview incomeVsPayments incomeVsPayments paymentMethods paymentMethods"
+      "budgetOverview budgetOverview accountBalance accountBalance paymentMethods paymentMethods"
+      "budgetOverview budgetOverview accountBalance accountBalance paymentMethods paymentMethods"
+      "budgetOverview budgetOverview accountBalance accountBalance paymentMethods paymentMethods"
+      "budgetOverview budgetOverview accountBalance accountBalance paymentMethods paymentMethods"
+      "budgetOverview budgetOverview accountBalance accountBalance paymentMethods paymentMethods"
+      "budgetOverview budgetOverview accountBalance accountBalance paymentMethods paymentMethods"
+      "budgetOverview budgetOverview accountBalance accountBalance paymentMethods paymentMethods"
+      "budgetOverview budgetOverview accountBalance accountBalance paymentMethods paymentMethods"
+      "budgetOverview budgetOverview accountBalance accountBalance paymentMethods paymentMethods"
+      "budgetOverview budgetOverview accountBalance accountBalance paymentMethods paymentMethods"
+      "budgetOverview budgetOverview accountBalance accountBalance paymentMethods paymentMethods"
+      "budgetOverview budgetOverview accountBalance accountBalance paymentMethods paymentMethods"
+      "budgetOverview budgetOverview accountBalance accountBalance paymentMethods paymentMethods";
+  }
+  /* testing part */
+  .bkWhite {
+    background-color: aqua;
+  }
+}

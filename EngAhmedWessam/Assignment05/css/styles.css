@@ -1,0 +1,253 @@
+/* General Configuration */
+
+* {
+  /* margins are taken from inside */
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  direction: rtl;
+}
+
+.paddingT1 {
+  padding: 24px;
+}
+
+.paddingT2 {
+  padding: 32px;
+}
+
+.paddingT3 {
+  padding: 16px;
+}
+
+.bkWhite {
+  background-color: white;
+}
+
+.grayRoundBorder16 {
+  border: 2px solid #e2e2e3;
+  border-radius: 16px;
+}
+
+.hiddenDiv {
+  display: none;
+}
+
+/* page container */
+.mainContainer {
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-areas: "info";
+}
+
+/* side bar */
+.mainContainer .sideBar {
+  display: none;
+  grid-area: sidebar;
+}
+
+/* financials */
+/* done with approximate sizes of 145 rows * 1 column  */
+.mainContainer .financials {
+  background-color: #f9fafb;
+  padding: 30px;
+  /* from parent grid */
+  grid-area: info;
+  /* to child divs */
+  display: grid;
+  gap: 30px;
+  grid-template-areas:
+    "subscriberInfo"
+    "subscriberInfo"
+    "subscriberInfo"
+    "subscriberInfo"
+    "currentBalance"
+    "currentBalance"
+    "currentBalance"
+    "currentBalance"
+    "currentBalance"
+    "currentBalance"
+    "income"
+    "income"
+    "income"
+    "income"
+    "income"
+    "income"
+    "payments"
+    "payments"
+    "payments"
+    "payments"
+    "payments"
+    "payments"
+    "recentActivity"
+    "recentActivity"
+    "recentActivity"
+    "recentActivity"
+    "recentActivity"
+    "recentActivity"
+    "recentActivity"
+    "recentActivity"
+    "recentActivity"
+    "recentActivity"
+    "recentActivity"
+    "recentActivity"
+    "recentActivity"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "recentTransactions"
+    "monthlyBills"
+    "monthlyBills"
+    "monthlyBills"
+    "monthlyBills"
+    "monthlyBills"
+    "monthlyBills"
+    "monthlyBills"
+    "monthlyBills"
+    "monthlyBills"
+    "monthlyBills"
+    "monthlyBills"
+    "monthlyBills"
+    "monthlyBills"
+    "monthlyBills"
+    "monthlyBills"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "budgetOverview"
+    "incomeVsPayments"
+    "incomeVsPayments"
+    "incomeVsPayments"
+    "incomeVsPayments"
+    "incomeVsPayments"
+    "incomeVsPayments"
+    "incomeVsPayments"
+    "incomeVsPayments"
+    "incomeVsPayments"
+    "incomeVsPayments"
+    "incomeVsPayments"
+    "accountBalance"
+    "accountBalance"
+    "accountBalance"
+    "accountBalance"
+    "accountBalance"
+    "accountBalance"
+    "accountBalance"
+    "accountBalance"
+    "accountBalance"
+    "accountBalance"
+    "accountBalance"
+    "accountBalance"
+    "accountBalance"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods"
+    "paymentMethods";
+}
+
+.mainContainer .financials .subscriberInfo {
+  grid-area: subscriberInfo;
+  background: linear-gradient(90deg, rgb(255, 255, 255), rgb(250, 250, 250));
+}
+
+.mainContainer .financials .currentBalance {
+  grid-area: currentBalance;
+}
+
+.mainContainer .financials .income {
+  grid-area: income;
+}
+
+.mainContainer .financials .payments {
+  grid-area: payments;
+}
+
+.mainContainer .financials .recentActivity {
+  grid-area: recentActivity;
+}
+
+.mainContainer .financials .monthlyBills {
+  grid-area: monthlyBills;
+}
+
+.mainContainer .financials .recentTransactions {
+  grid-area: recentTransactions;
+}
+
+.mainContainer .financials .budgetOverview {
+  grid-area: budgetOverview;
+}
+
+.mainContainer .financials .incomeVsPayments {
+  grid-area: incomeVsPayments;
+}
+
+.mainContainer .financials .accountBalance {
+  grid-area: accountBalance;
+}
+
+.mainContainer .financials .paymentMethods {
+  grid-area: paymentMethods;
+}
