@@ -14,13 +14,12 @@
       <nav class="navbar top-0 navbar-expand-lg bg-body-tertiary">
         <div class="container-md">
           <div
-            class="divGradientBackground p-1 border border-2 border-dark rounded-3 text-center display-5"
+            class="divGradientBackground p-1 border border-2 border-dark rounded-3 text-center fs-5"
           >
             <i class="fa-solid fa-code"></i>
           </div>
           <div
-            class="gradientText p-3 text-center display-6 fw-dynamic"
-            style="--weight: 900"
+            class="gradientTextBase gradientText p-3 text-center fs-1 fw-bolder"
           >
             أحمد حسن
           </div>
@@ -69,22 +68,96 @@
     </head>
     <!-- navbar end -->
     <!-- hero section start -->
-    <section id="hero-section">
-      <div class="container mx-auto pt-3 pt-lg-0 px-3 z-1">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="acrobatics z-2">
-              <div class="devPhoto z-3">
+    <section id="hero-section" class="mb-3 p-3">
+      <div class="container text-center mx-auto pt-3 pt-lg-0 px-3 z-1">
+        <div class="row d-flex flex-column-reverse flex-lg-row">
+          <div class="c1 col-12 col-md-6">
+            <div class="developerInfo p-4 text-lg-end">
+              <div
+                class="freelanceAvailable d-inline-flex flex-row align-items-center gap-2 m-2 px-2 py-1 rounded-pill border border-2 border-success text-success bg-success-subtle"
+              >
+                <i class="fa-solid fa-circle fa-beat p-2"></i>
+                <p class="px-3 fw-semibold mt-3">متاح للعمل الحر</p>
+              </div>
+              <div class="helloTag m-3">
+                <p class="fw-medium text-body-secondary fs-5">
+                  مرحباً، أنا....
+                </p>
+              </div>
+              <div
+                class="devNameGrad gradientTextBase gradientText fs-1 fw-bolder d-block m-3"
+              >
+                <h1>أحمد حسن</h1>
+              </div>
+              <div
+                class="developerSpecialization border border-1 rounded-pill d-inline-flex align-items-center justify-content-center flex-row p-3 m-3"
+              >
+                <div class="devIcon p-1 rounded-circle border border-1">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <div class="specName">
+                  <p class="fw-bold p-2 mx-2 my-0">Frontend Developer</p>
+                </div>
+              </div>
+              <div class="promise m-3 p-2 fw-medium text-muted">
+                <p>
+                  بحول أفكارك لـ <span>تجارب رقمية مميزة.</span> متخصص في بناء
+                  مواقع وتطبيقات ويب حديثة بأحدث التقنيات.
+                </p>
+              </div>
+              <div
+                class="heroButtons m-2 p-2 d-flex flex-row align-items-center justify-content-between"
+              >
+                <div
+                  class="exploreAnchor d-inline-flex flex-row align-items-center justify-content-between p-3 m-2 border border-0 rounded-5"
+                >
+                  <a href="#portfolio" class="text-light">استكشف أعمالي</a>
+                  <i class="fa-solid fa-arrow-left text-light"></i>
+                </div>
+                <div
+                  class="contactAnchor d-flex flex-row align-items-center justify-content-between p-3 m-2 border border-2 border-secondary rounded-5"
+                >
+                  <a href="#contact" class="text-primary">تواصل معي</a>
+                  <i class="fa-brands fa-telegram text-primary"></i>
+                </div>
+              </div>
+              <div
+                class="stackButtons d-flex flex-row align-items-center justify-content-evenly"
+              >
+                <div class="stackButton stackButtonBootstrap">
+                  <i class="fa-brands fa-bootstrap"></i>
+                  <p>Bootstrap</p>
+                </div>
+                <div class="stackButton stackButtonTailwind">
+                  <i class="fa-brands fa-tailwind-css"></i>
+                  <p>Tailwind</p>
+                </div>
+
+                <div class="stackButton stackButtonAngular">
+                  <i class="fa-brands fa-angular"></i>
+                  <p>Angular</p>
+                </div>
+                <div class="stackButton stackButtonReact">
+                  <i class="fa-brands fa-react"></i>
+                  <p>React</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="c2 col-12 col-md-6">
+            <div
+              class="acrobatics m-3 position-relative d-flex align-items-center justify-content-center"
+            >
+              <div class="devPhoto position-relative rounded-circle z-2">
                 <img
                   src="./images/hero-section-img-Dsy3Av-w.webp"
                   alt="dev image"
+                  class="w-100 rounded-circle"
                 />
               </div>
-              <div class="dashedCircle z-4">
-                <div class="solidCircle z-5"></div>
-              </div>
+              <div class="dashedCircle z-3"></div>
+              <div class="solidCircle z-4"></div>
             </div>
-            <div class="developerInfo border border-2">.</div>
           </div>
         </div>
       </div>

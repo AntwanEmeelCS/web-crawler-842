@@ -4,19 +4,21 @@ let htmlElement = document.querySelector("html");
 let btnToggleMode = document.querySelector(".btnToggleMode");
 
 btnToggleMode.addEventListener("click", function (event) {
+  /* general change */
   let currentMode = htmlElement.getAttribute("data-bs-theme");
-
+  /* hero section */
+  let hero_sec = document.querySelector("#hero-section");
   console.log(currentMode);
 
   if (currentMode.toLowerCase() === "dark") {
     htmlElement.setAttribute("data-bs-theme", "light");
-    console.log("Mode Changed From DARK to LIGHT");
+    hero_sec.style.backgroundColor = "#fff";
   } else if (currentMode.toLowerCase() === "light") {
     htmlElement.setAttribute("data-bs-theme", "dark");
-    console.log("Mode Changed From LIGHT to DARK");
+    hero_sec.style.backgroundColor = "#2B3035";
   } else {
     htmlElement.setAttribute("data-bs-theme", "light");
-    console.log("Mode Changed to LIGHT as DEFAULT");
+    hero_sec.style.backgroundColor = "#fff";
   }
 
   event.stopPropagation();
