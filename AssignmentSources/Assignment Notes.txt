@@ -1,0 +1,8 @@
+1) Folder Name:
+{student-name}-{days-of-week}-{Lecture-Hours}-Assignment#??-MobilePhone
+
+2)Add folder to archive
+
+3)Upload n Google Drive
+
+4) Send by Email to your mentor

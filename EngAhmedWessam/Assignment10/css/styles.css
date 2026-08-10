@@ -1,30 +1,7 @@
+/* general declarations */
+
 a {
   text-decoration: none;
-}
-
-@font-face {
-  font-family: "Alexandria";
-  src: url("../gFonts/Alexandria-VariableFont_wght.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Cairo";
-  src: url("../gFonts/Cairo-VariableFont_wght.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Tajwal";
-  src:
-    url("../gFonts/Tajawal/Tajawal-Black.ttf") format("truetype"),
-    url("../gFonts/Tajawal/Tajawal-Bold.ttf") format("truetype")
-      url("../gFonts/Tajawal/Tajawal-ExtraBold.ttf") format("truetype")
-      url("../gFonts/Tajawal/Tajawal-ExtraLight.ttf") format("truetype")
-      url("../gFonts/Tajawal/Tajawal-Light.ttf") format("truetype")
-      url("../gFonts/Tajawal/Tajawal-Medium.ttf") format("truetype")
-      url("../gFonts/Tajawal/Tajawal-Regular.ttf") format("truetype");
-  font-display: swap;
 }
 
 :root {
@@ -51,6 +28,37 @@ a {
   );
 }
 
+/* Font declarations */
+
+@font-face {
+  font-family: "Alexandria";
+  src: url("../gFonts/Alexandria-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../gFonts/Cairo-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tajwal";
+  src:
+    url("../gFonts/Tajawal/Tajawal-Black.ttf") format("truetype"),
+    url("../gFonts/Tajawal/Tajawal-Bold.ttf") format("truetype")
+      url("../gFonts/Tajawal/Tajawal-ExtraBold.ttf") format("truetype")
+      url("../gFonts/Tajawal/Tajawal-ExtraLight.ttf") format("truetype")
+      url("../gFonts/Tajawal/Tajawal-Light.ttf") format("truetype")
+      url("../gFonts/Tajawal/Tajawal-Medium.ttf") format("truetype")
+      url("../gFonts/Tajawal/Tajawal-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+/* general font classes */
+.applyThemeFont {
+  font-family: var(--theme-font-face);
+}
+
 .fw-dynamic {
   font-weight: var(--weight, 400); /* Defaults to 400 if no value is passed */
 }
@@ -68,6 +76,37 @@ a {
   background-image: var(--theme-default-gradient);
 }
 
+/* code font classes */
+.codeComment {
+  color: #62748e;
+}
+
+.codeKeyword {
+  color: #c27aff;
+}
+
+.codeVarName,
+.codeBoolValue {
+  color: #51a2ff;
+}
+.codeAttrName {
+  color: #05df72;
+}
+.codeStringVal {
+  color: #fcc800;
+}
+.codePunctuation {
+  color: white;
+}
+.tabFormat {
+  white-space: pre;
+  tab-size: 2;
+}
+.tabFormatDouble {
+  white-space: pre;
+  tab-size: 4;
+}
+/* animations */
 @keyframes spin_ccw {
   from {
     transform: rotate(0deg);
@@ -117,8 +156,8 @@ a {
   justify-content: center;
 }
 .navBarLinks li {
-  padding: 0.5rem;
-  font-size: 1rem;
+  padding: 8px;
+  font-size: 16px;
   font-weight: var(--extra-bold-font);
   font-family: var(--theme-font-face);
 }
@@ -132,119 +171,137 @@ a {
 /* hero section start */
 #hero-section {
   background-color: #f2f6fa;
+  .container {
+    max-width: 100%;
 
-  .container .c2 {
-    width: 100%;
-    @media screen and (min-width: 992px) {
-      width: 50%;
-    }
-    .acrobatics {
-      width: 370px;
-      height: 370px;
-      @media screen and (min-width: 768px) {
-        width: 470px;
-        height: 470px;
+    .c2 {
+      width: 100%;
+      @media screen and (min-width: 62rem) {
+        width: 50%;
       }
+      .acrobatics {
+        width: 23.125rem;
+        height: 23.125rem;
+        @media screen and (min-width: 48rem) {
+          width: 29.375rem;
+          height: 29.375rem;
+        }
 
-      .dashedCircle {
-        border-style: dashed;
-        color: var(--theme-color-2);
-        width: 350px;
-        height: 350px;
-        border-radius: 50%;
-        margin: auto;
-        animation: spin_cw 1.5s linear infinite;
-        position: absolute;
-        @media screen and (min-width: 768px) {
-          width: 450px;
-          height: 450px;
+        .dashedCircle {
+          border-style: dashed;
+          color: var(--theme-color-2);
+          width: 21.875rem;
+          height: 21.875rem;
+          border-radius: 50%;
+          margin: auto;
+          animation: spin_cw 1.5s linear infinite;
+          position: absolute;
+          @media screen and (min-width: 48rem) {
+            width: 28.125rem;
+            height: 28.125rem;
+          }
         }
-      }
-      .solidCircle {
-        border: 2px solid var(--theme-color-1);
-        width: 280px;
-        height: 280px;
-        border-radius: 50%;
-        margin: auto;
-        position: absolute;
-        @media screen and (min-width: 768px) {
-          width: 380px;
-          height: 380px;
+        .solidCircle {
+          border: 0.125rem solid var(--theme-color-1);
+          width: 17.5rem;
+          height: 17.5rem;
+          border-radius: 50%;
+          margin: auto;
+          position: absolute;
+          @media screen and (min-width: 48rem) {
+            width: 23.75rem;
+            height: 23.75rem;
+          }
         }
-      }
-      .codeIcon {
-        font-size: 20px;
-        font-weight: bold;
-        background-color: white;
-        transform: translateX(-50px), translateY(-50px);
-        animation: bounce 3s infinite;
-      }
-      .devPhoto {
-        --border-thickness-grad: 0.75rem;
-        width: 16.5625rem;
-        padding: var(--border-thickness-grad);
-        background-image: var(--theme-default-gradient);
-        @media screen and (min-width: 768px) {
-          width: 20rem;
-        }
-      }
-    }
-  }
-  .container .c1 {
-    width: 100%;
-    @media screen and (min-width: 992px) {
-      width: 50%;
-    }
-    .developerInfo {
-      .devNameGrad {
-        animation: 1s infinite gradName ease-in-out;
-      }
-      .developerSpecialization {
-        .devIcon {
-          background-color: var(--theme-color-1);
-          font-size: 1.5rem;
-        }
-        .specName {
-          font-size: 1rem;
-        }
-      }
-      .heroButtons {
-        a {
-          padding: 5px;
-          font-size: 20px;
-        }
-        i {
-          padding: 5px;
-          font-size: 32px;
+        .codeIcon {
+          font-size: 1.25rem;
           font-weight: bold;
+          background-color: white;
+          transform: translateX(-3.125rem), translateY(-3.125rem);
+          animation: bounce 3s infinite;
         }
-        .exploreAnchor {
+        .devPhoto {
+          --border-thickness-grad: 12px;
+          width: 265px;
+          padding: var(--border-thickness-grad);
           background-image: var(--theme-default-gradient);
+          @media screen and (min-width: 48rem) {
+            width: 320px;
+          }
         }
       }
-      .promise {
-        font-size: 2rem;
+    }
+    .c1 {
+      width: 100%;
+      @media screen and (min-width: 62rem) {
+        width: 50%;
       }
-      .promise span {
-        color: var(--theme-color-2);
-      }
-      .stackButtons {
-        .stackButton {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          flex-direction: row;
-          padding: 5px;
-          border: 2px solid black;
-          border-radius: 10px;
-          p {
-            margin: 5px;
+      .developerInfo {
+        .devNameGrad {
+          animation: 1s infinite gradName ease-in-out;
+          h1 {
+            font-size: 2.25rem;
+
+            @media screen and (min-width: 768px) {
+              font-size: 3.75rem;
+            }
+            @media screen and (min-width: 992px) {
+              font-size: 4.375rem;
+            }
+          }
+        }
+        .developerSpecialization {
+          .devIcon {
+            background-color: var(--theme-color-1);
+            font-size: 24px;
+          }
+          .specName {
             font-size: 16px;
-            font-weight: bold;
+          }
+        }
+        .heroButtons {
+          a {
+            padding: 0.3125rem;
+            font-size: 1.25rem;
           }
           i {
-            padding: 5px;
-            font-size: 24px;
+            padding: 0.3125rem;
+            font-size: 2rem;
+            font-weight: bold;
+          }
+          .exploreAnchor {
+            background-image: var(--theme-default-gradient);
+          }
+        }
+        .stackButtons {
+          .stackButton {
+            margin: 0.25rem;
+          }
+        }
+        .promise {
+          font-size: 32px;
+        }
+        .promise span {
+          color: var(--theme-color-2);
+        }
+        .stackButtons {
+          .stackButton {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            padding: 0.3125rem;
+            border: 0.125rem solid black;
+            border-radius: 0.625rem;
+            p {
+              margin: 0.3125rem;
+              font-size: 1rem;
+              font-weight: bold;
+            }
+            i {
+              padding: 0.3125rem;
+              font-size: 1.5rem;
+            }
           }
         }
       }
@@ -253,5 +310,152 @@ a {
 }
 /* hero section end */
 
-/* new discoveries */
-/* d-inline-flex => inline (autosize) + flex for it's children */
+/* about me start */
+#about {
+  .container-fluid {
+    width: 100%;
+    .aboutMeText {
+      p {
+        color: var(--theme-color-1);
+      }
+    }
+    .aboutMeName {
+      h2 {
+        font-size: 2.25rem;
+        font-weight: 900;
+        @media screen and (min-width: 768px) {
+          font-size: 3rem;
+        }
+      }
+    }
+    .nameUnderline {
+      width: 102px;
+      height: 3.2px;
+      color: transparent;
+    }
+    .aboutMeContent {
+      .c1 {
+        width: 100%;
+        @media screen and (min-width: 62rem) {
+          width: 50%;
+        }
+        h3 {
+          span {
+            color: var(--theme-color-2);
+          }
+        }
+        .infoPills {
+          .pill-1,
+          .pill-2,
+          .pill-3 {
+            margin: 0.25rem;
+          }
+          .pill-1 i,
+          .pill-2 i,
+          .pill-3 i {
+            color: var(--theme-color-1);
+          }
+        }
+        .iPresent {
+          p {
+            i {
+              color: var(--theme-color-2);
+            }
+          }
+          ul {
+            list-style: none;
+            li {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: flex-start;
+            }
+          }
+        }
+      }
+      .c2 {
+        width: 100%;
+        @media screen and (min-width: 992px) {
+          width: 50%;
+        }
+        .codeEditor {
+          .codeEditorHead {
+            background-color: #1d293d;
+          }
+          .codeEditorContent {
+            background-color: #0f172b;
+            direction: ltr;
+            text-align: left;
+            p {
+              font-size: 0.6563rem;
+
+              @media screen and (min-width: 576px) {
+                font-size: 0.875rem;
+              }
+              @media screen and (min-width: 768px) {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+        .achievements {
+          margin-bottom: 2rem;
+          .ach1,
+          .ach3 {
+            background-color: #f8fafc;
+            margin-inline: 0.5rem;
+            flex-grow: 1;
+            .achHead {
+              font-weight: 900;
+              font-size: 1.5rem;
+              color: var(--theme-color-2);
+              @media screen and (min-width: 576px) {
+                font-size: 2rem;
+              }
+            }
+            .achUnitName {
+              font-size: 0.6563rem;
+              @media screen and (min-width: 576px) {
+                font-size: 0.875rem;
+              }
+            }
+            p {
+              margin-bottom: 0.25rem;
+            }
+          }
+          .ach2 {
+            background-color: #f8fafc;
+            flex-grow: 1;
+            .achHead {
+              font-weight: 900;
+              font-size: 1.5rem;
+              color: var(--theme-color-1);
+              @media screen and (min-width: 576px) {
+                font-size: 2rem;
+              }
+            }
+            .achUnitName {
+              font-size: 0.6563rem;
+              @media screen and (min-width: 576px) {
+                font-size: 0.875rem;
+              }
+            }
+            p {
+              margin-bottom: 0.25rem;
+            }
+          }
+        }
+        .socialMediaIcons {
+          .socialMediaIcon {
+            padding: 0.75rem;
+            font-size: 1rem;
+            background-color: #f8fafc;
+            border: 1px solid black;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+/* about me end */

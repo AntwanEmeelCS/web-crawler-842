@@ -1,0 +1,36 @@
+/* new discoveries */
+
+/* Introducing a new display method */
+/* d-inline-flex => inline (autosize) + flex for it's children */
+/* ------------------------ */
+
+/* including and formatting a tab character */
+/* html */
+/* <p>First Part<span class="tab-space">&#9;</span>Second Part</p>
+ */
+
+/* css */
+/* .tab-space {
+  white-space: pre; Keeps the tab character from collapsing
+  tab-size: 4;      Controls the width of the tab (defaults to 8) 
+}
+ */
+
+/* fixing navbar at top => use utility sticky-top */
+
+/* writing media query using bootstrap breakpoints */
+/* @media (min-width: map-get($grid-breakpoints, grid-size)) {
+  .custom-class {
+    background-color: blue;
+  }
+}
+  grid-size takes values from the following map
+  
+  $grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px, 
+  xl: 1200px,
+  xxl: 1400px
+);*/
