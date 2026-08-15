@@ -111,17 +111,15 @@ export default class recipeWorker {
   //search by name
   static async loadRecipesByName(filterString) {
     if (this.lastChosenArea.trim().length > 0) {
-      if (this.lastChosenArea.trim() != "") {
-        this.clearAreaElements();
-      }
-      if (this.lastChosenCatagory.trim().length > 0) {
-        this.clearCatagoryElements();
-      }
-      let recipeInfo = await Utils.fetchData(`meals/search?q=${filterString}`);
-      this.setRecipeCount(recipeInfo.results.length, filterString);
-      this.fillRecipeGrid(recipeInfo);
-      this.lastChosenName = filterString;
+      this.clearAreaElements();
     }
+    if (this.lastChosenCatagory.trim().length > 0) {
+      this.clearCatagoryElements();
+    }
+    let recipeInfo = await Utils.fetchData(`meals/search?q=${filterString}`);
+    this.setRecipeCount(recipeInfo.results.length, filterString);
+    this.fillRecipeGrid(recipeInfo);
+    this.lastChosenName = filterString;
   }
 
   static async addSearchTextListener() {
@@ -169,6 +167,13 @@ export default class recipeWorker {
         );
         lastChosenAreaButton.classList.remove("bg-emerald-600", "text-white");
         lastChosenAreaButton.classList.add("bg-gray-100", "text-gray-700");
+        //last cuisine clear at choosing other values
+        let lastCuisineElement = document.querySelector(
+          `#search-filters-section div .flex [data-area=""]`,
+        );
+        lastCuisineElement.classList.remove("bg-emerald-600", "text-white");
+        lastCuisineElement.classList.add("bg-gray-100", "text-gray-700");
+
         //current element
         element.classList.remove("bg-gray-100", "text-gray-700");
         element.classList.add("bg-emerald-600", "text-white");
