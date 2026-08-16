@@ -1,5 +1,6 @@
 import Utils from "./utils.js";
 import environment from "./environment.js";
+import router from "./router.js";
 export default class recipeWorker {
   //variables
   static lastChosenName = "";
@@ -26,7 +27,7 @@ export default class recipeWorker {
     areaDiv.innerHTML = areaCartoona;
   }
 
-  static async prepareMealsCatagories(params) {
+  static async prepareMealsCatagories() {
     let catagoriesGrid = document.getElementById("categories-grid");
     let catagoriesInfo = await Utils.fetchData("meals/categories");
     let catagoriesCartoona = ``;
@@ -51,12 +52,31 @@ export default class recipeWorker {
     recipeCountID.innerText = `Showing ${recipeCount} ${catagoryName} recipes`;
   }
 
-  static async fillRecipeGrid(recipeInfo) {
+  static addRecipeListner() {
+    let recipeCards = document.querySelectorAll("#recipes-grid .recipe-card");
+    for (let index = 0; index < recipeCards.length; index++) {
+      const element = recipeCards[index];
+      let recipeID = element.getAttribute("data-meal-id");
+      element.addEventListener("click", function (e) {
+        router.routeToAppPage("Recipe Details", recipeID);
+        e.stopPropagation();
+      });
+    }
+  }
+  static fillRecipeGrid(recipeInfo) {
     let recipeGrid = document.getElementById("recipes-grid");
     let recipeCartoona = ``;
-    for (let index = 0; index < recipeInfo.results.length; index++) {
-      const element = recipeInfo.results[index];
-      recipeCartoona += `<div class="recipe-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer group" data-meal-id="${element.id}">
+    if (recipeInfo.results.length == 0) {
+      recipeCartoona = `<div class="flex flex-col items-center justify-center py-12 text-center">
+            <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+                <i class="text-2xl text-gray-400" data-fa-i2svg=""><svg class="svg-inline--fa fa-magnifying-glass" data-prefix="fas" data-icon="magnifying-glass" role="img" viewBox="0 0 512 512" aria-hidden="true" data-fa-i2svg=""><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376C296.3 401.1 253.9 416 208 416 93.1 416 0 322.9 0 208S93.1 0 208 0 416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg></i>
+            </div>
+            <p class="text-gray-500 text-lg">No recipes found. Try a different search term.</p>
+        </div>`;
+    } else {
+      for (let index = 0; index < recipeInfo.results.length; index++) {
+        const element = recipeInfo.results[index];
+        recipeCartoona += `<div class="recipe-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer group" data-meal-id="${element.id}">
               <div class="relative h-48 overflow-hidden">
                 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="${element.thumbnail}" alt="${element.name}" loading="lazy">
                 <div class="absolute bottom-3 left-3 flex gap-2">
@@ -98,7 +118,9 @@ export default class recipeWorker {
                 </div>
               </div>
             </div>`;
+      }
     }
+
     recipeGrid.innerHTML = recipeCartoona;
   }
 
@@ -107,6 +129,7 @@ export default class recipeWorker {
 
     let recipeInfo = await Utils.fetchData(`meals/random?count=${recipeCount}`);
     this.fillRecipeGrid(recipeInfo);
+    this.addRecipeListner();
   }
   //search by name
   static async loadRecipesByName(filterString) {
@@ -119,13 +142,14 @@ export default class recipeWorker {
     let recipeInfo = await Utils.fetchData(`meals/search?q=${filterString}`);
     this.setRecipeCount(recipeInfo.results.length, filterString);
     this.fillRecipeGrid(recipeInfo);
+    this.addRecipeListner();
     this.lastChosenName = filterString;
   }
 
   static async addSearchTextListener() {
     this.recipeText.addEventListener("input", async (e) => {
-      this.loadRecipesByName(this.recipeText.value);
       this.lastChosenName = this.recipeText.value;
+      await this.loadRecipesByName(this.recipeText.value);
       e.stopPropagation();
     });
   }
@@ -152,6 +176,7 @@ export default class recipeWorker {
       );
       this.setRecipeCount(recipeInfo.results.length, filterString);
       this.fillRecipeGrid(recipeInfo);
+      this.addRecipeListner();
     }
   }
   static async addAreaListeners() {
@@ -179,10 +204,10 @@ export default class recipeWorker {
         element.classList.add("bg-emerald-600", "text-white");
         const area_name = element.getAttribute("data-area");
         if (area_name == null || area_name.trim().length == 0) {
-          this.loadRandomRecipes();
+          await this.loadRandomRecipes();
           this.lastChosenArea = "";
         } else {
-          this.loadRecipesByArea(area_name);
+          await this.loadRecipesByArea(area_name);
           this.lastChosenArea = area_name;
         }
       });
@@ -222,6 +247,7 @@ export default class recipeWorker {
       );
       this.setRecipeCount(recipeInfo.results.length, filterString);
       this.fillRecipeGrid(recipeInfo);
+      this.addRecipeListner();
     }
   }
 
@@ -242,6 +268,7 @@ export default class recipeWorker {
   static clearCatagoryElements() {
     this.lastChosenCatagory = "";
   }
+  //initialization
   static async prepareMealsPage() {
     //search text
     this.clearNameElements();

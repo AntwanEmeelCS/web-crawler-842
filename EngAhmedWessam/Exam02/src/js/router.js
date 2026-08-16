@@ -1,3 +1,6 @@
+import recipeDetailsWorker from "./recipeDetailsWorker.js";
+import Utils from "./utils.js";
+
 export default class router {
   static setHeaderInfo(mainText, subText) {
     let headerH1 = document.querySelector("#header h1");
@@ -7,11 +10,7 @@ export default class router {
     headerP.innerText = subText;
   }
 
-  static setElementDisplay(element, displayName) {
-    element.style.display = displayName;
-  }
-
-  static prepareAppPage(funcName) {
+  static async prepareAppPage(funcName, data = "") {
     let meals_searchFilter = document.getElementById("search-filters-section");
     let meals_categoriesSection = document.getElementById(
       "meal-categories-section",
@@ -25,35 +24,39 @@ export default class router {
 
     switch (funcName) {
       case "Meals & Recipes":
-        this.setElementDisplay(meals_searchFilter, "");
-        this.setElementDisplay(meals_categoriesSection, "");
-        this.setElementDisplay(meals_allRecipes, "");
-        this.setElementDisplay(mealDetails, "none");
-        this.setElementDisplay(productsSection, "none");
-        this.setElementDisplay(foodlogSection, "none");
+        Utils.setElementDisplay(meals_searchFilter, "");
+        Utils.setElementDisplay(meals_categoriesSection, "");
+        Utils.setElementDisplay(meals_allRecipes, "");
+        Utils.setElementDisplay(mealDetails, "none");
+        Utils.setElementDisplay(productsSection, "none");
+        Utils.setElementDisplay(foodlogSection, "none");
         break;
       case "Product Scanner":
-        this.setElementDisplay(meals_searchFilter, "none");
-        this.setElementDisplay(meals_categoriesSection, "none");
-        this.setElementDisplay(meals_allRecipes, "none");
-        this.setElementDisplay(mealDetails, "none");
-        this.setElementDisplay(productsSection, "");
-        this.setElementDisplay(foodlogSection, "none");
+        Utils.setElementDisplay(meals_searchFilter, "none");
+        Utils.setElementDisplay(meals_categoriesSection, "none");
+        Utils.setElementDisplay(meals_allRecipes, "none");
+        Utils.setElementDisplay(mealDetails, "none");
+        Utils.setElementDisplay(productsSection, "");
+        Utils.setElementDisplay(foodlogSection, "none");
 
         break;
       case "Food Log":
-        this.setElementDisplay(meals_searchFilter, "none");
-        this.setElementDisplay(meals_categoriesSection, "none");
-        this.setElementDisplay(meals_allRecipes, "none");
-        this.setElementDisplay(mealDetails, "none");
-        this.setElementDisplay(productsSection, "none");
-        this.setElementDisplay(foodlogSection, "");
+        Utils.setElementDisplay(meals_searchFilter, "none");
+        Utils.setElementDisplay(meals_categoriesSection, "none");
+        Utils.setElementDisplay(meals_allRecipes, "none");
+        Utils.setElementDisplay(mealDetails, "none");
+        Utils.setElementDisplay(productsSection, "none");
+        Utils.setElementDisplay(foodlogSection, "");
         break;
       case "Recipe Details":
-        this.setHeaderInfo(
-          "Recipe Details",
-          "View full recipe information and nutrition facts",
-        );
+        await recipeDetailsWorker.fillRecipeInfo(data);
+
+        Utils.setElementDisplay(meals_searchFilter, "none");
+        Utils.setElementDisplay(meals_categoriesSection, "none");
+        Utils.setElementDisplay(meals_allRecipes, "none");
+        Utils.setElementDisplay(mealDetails, "");
+        Utils.setElementDisplay(productsSection, "none");
+        Utils.setElementDisplay(foodlogSection, "none");
 
         break;
       default:
@@ -61,35 +64,35 @@ export default class router {
     }
   }
 
-  static routeToAppPage(funcName) {
+  static async routeToAppPage(funcName, data = "") {
     switch (funcName) {
       case "Meals & Recipes":
         this.setHeaderInfo(
           "Meals & Recipes",
           "Discover delicious and nutritious recipes tailored for you",
         );
-        this.prepareAppPage(funcName);
+        await this.prepareAppPage(funcName);
         break;
       case "Product Scanner":
         this.setHeaderInfo(
           "Product Scanner",
           "Search packaged foods by name or barcode",
         );
-        this.prepareAppPage(funcName);
+        await this.prepareAppPage(funcName);
         break;
       case "Food Log":
         this.setHeaderInfo(
           "Food Log",
           "Track your daily nutrition and food intake",
         );
-        this.prepareAppPage(funcName);
+        await this.prepareAppPage(funcName);
         break;
       case "Recipe Details":
         this.setHeaderInfo(
           "Recipe Details",
           "View full recipe information and nutrition facts",
         );
-        this.prepareAppPage(funcName);
+        await this.prepareAppPage(funcName, data);
         break;
       default:
         //set default to meals and recipes
@@ -97,7 +100,7 @@ export default class router {
           "Meals & Recipes",
           "Discover delicious and nutritious recipes tailored for you",
         );
-        this.prepareAppPage("Meals & Recipes");
+        await this.prepareAppPage("Meals & Recipes");
         break;
     }
   }
