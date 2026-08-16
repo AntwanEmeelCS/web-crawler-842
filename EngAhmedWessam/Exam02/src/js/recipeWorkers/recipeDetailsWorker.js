@@ -1,5 +1,5 @@
-import router from "./router.js";
-import Utils from "./utils.js";
+import router from "../router.js";
+import Utils from "../utils.js";
 import recipeEvaluator from "./recipeEvaluator.js";
 
 export default class recipeDetailsWorker {

@@ -1,14 +1,11 @@
 "use strict";
 import Utils from "./utils.js";
 import environment from "./environment.js";
-import recipeWorker from "./recipeWorker.js";
+import recipeWorker from "./recipeWorkers/recipeWorker.js";
 import sidebarWorker from "./sidebarWorker.js";
 import router from "./router.js";
-import recipeDetailsWorker from "./recipeDetailsWorker.js";
-
-let lastRecipeName = "";
-let lastAreaName = "";
-let lastCatagoryName = "";
+import recipeDetailsWorker from "./recipeWorkers/recipeDetailsWorker.js";
+import productWorker from "./productWorkers/productWorker.js";
 
 //welcome screen
 function showWelcomeScreen() {
@@ -28,6 +25,8 @@ async function doPreparations() {
   await recipeWorker.prepareMealsPage();
   //recipe details
   await recipeDetailsWorker.prepareMealDetailsPage();
+  //product scanner page
+  await productWorker.prepareProductPage();
 }
 
 //initiating app

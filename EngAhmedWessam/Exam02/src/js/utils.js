@@ -6,7 +6,10 @@ export default class Utils {
   }
   static async fetchData(subURL) {
     try {
-      const response = await fetch(environment.base_url + subURL);
+      let full_url = environment.base_url + subURL;
+      console.log(full_url);
+
+      const response = await fetch(full_url);
 
       if (!response.ok) {
         console.log(`HTTP GET error! Status: ${response.status}`);

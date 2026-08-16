@@ -1,6 +1,6 @@
-import Utils from "./utils.js";
-import environment from "./environment.js";
-import router from "./router.js";
+import Utils from "../utils.js";
+import environment from "../environment.js";
+import router from "../router.js";
 export default class recipeWorker {
   //variables
   static lastChosenName = "";

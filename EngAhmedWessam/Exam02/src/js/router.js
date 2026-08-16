@@ -1,4 +1,4 @@
-import recipeDetailsWorker from "./recipeDetailsWorker.js";
+import recipeDetailsWorker from "./recipeWorkers/recipeDetailsWorker.js";
 import Utils from "./utils.js";
 
 export default class router {
