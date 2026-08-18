@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage Test</title>
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <form>
+      <div class="ItemSetter">
+        <div class="divSetItemName m-1 p-1 d-flex align-items-center">
+          <label class="form-label" for="itemNameSet">Enter Item Name</label>
+          <input
+            class="form-control m-1 p-1 w-25"
+            type="text"
+            name="itemNameSet"
+            id="itemNameSet"
+          />
+        </div>
+        <div class="divSetItemValue m-1 p-1 d-flex align-items-center">
+          <label class="form-label m-1 p-1" for="itemValueSet"
+            >Enter Item Value</label
+          >
+          <input
+            class="form-control m-1 p-1 w-25"
+            type="text"
+            name="itemValueSet"
+            id="itemValueSet"
+          />
+        </div>
+        <input type="checkbox" name="allowOverwrite" id="allowOverwrite" /><span
+          >Allow Overwrite Variable Content</span
+        >
+        <br />
+        <input
+          class="btn btn-primary m-1 p-1"
+          type="submit"
+          value="Set Item"
+          id="btnSetItemValue"
+        />
+      </div>
+    </form>
+    <form>
+      <div class="itemReader mt-4">
+        <label class="form-label m-1 p-1" for="itemNameRead"
+          >Enter Item Name</label
+        >
+        <input
+          class="form-control m-1 p-1"
+          type="text"
+          name="itemNameRead"
+          id="itemNameRead"
+        />
+
+        <br />
+        <input
+          class="btn btn-primary"
+          m-1
+          p-1
+          type="submit"
+          value="Read Item"
+          id="btnReadItemValue"
+        />
+        <div
+          class="itemValueShow bg-secondary-subtle border border-1 border-black mx-auto w-50 my-5"
+        >
+          <p class="m-1 p-1" id="itemValue">.</p>
+        </div>
+      </div>
+    </form>
+    <script type="module" src="./scripts.js"></script>
+  </body>
+</html>

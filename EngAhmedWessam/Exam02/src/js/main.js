@@ -1,21 +1,24 @@
 "use strict";
-import Utils from "./utils.js";
+//import apiUtils from "./utilities/apiUtils.js";
 import environment from "./environment.js";
 import recipeWorker from "./recipeWorkers/recipeWorker.js";
 import sidebarWorker from "./sidebarWorker.js";
 import router from "./router.js";
 import recipeDetailsWorker from "./recipeWorkers/recipeDetailsWorker.js";
 import productWorker from "./productWorkers/productWorker.js";
+import appLocalStorageWorker from "./localStorageWorkers/appLocalStorageWorker.js";
 
 //welcome screen
 function showWelcomeScreen() {
   let loadingOverlay = document.querySelector("#app-loading-overlay");
   loadingOverlay.classList.remove("loading");
-  setTimeout(() => {
-    loadingOverlay.classList.add("loading");
-  }, 500);
 }
 
+function hideWelcomeScreen() {
+  let loadingOverlay = document.querySelector("#app-loading-overlay");
+
+  loadingOverlay.classList.add("loading");
+}
 async function doPreparations() {
   //activate side bar routing
   sidebarWorker.activateSidebarFunctionality();
@@ -27,12 +30,15 @@ async function doPreparations() {
   await recipeDetailsWorker.prepareMealDetailsPage();
   //product scanner page
   await productWorker.prepareProductPage();
+  //local storage
+  appLocalStorageWorker.initializeNutritionData();
 }
 
 //initiating app
 async function initiateApp() {
   showWelcomeScreen();
   await doPreparations();
+  hideWelcomeScreen();
 }
 
 await initiateApp();

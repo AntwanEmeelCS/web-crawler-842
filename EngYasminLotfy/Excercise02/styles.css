@@ -1,0 +1,6 @@
+.itemValueShow {
+  height: 500px;
+  box-sizing: border-box; /* Includes borders in the 500px size */
+  word-wrap: break-word; /* Prevents text from breaking layout width */
+  overflow: auto; /* Adds scrollbars only if text overflows 500px height */
+}

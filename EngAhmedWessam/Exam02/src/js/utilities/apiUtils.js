@@ -1,13 +1,10 @@
-import environment from "./environment.js";
+import environment from "../environment.js";
 
-export default class Utils {
-  static setElementDisplay(element, displayName) {
-    element.style.display = displayName;
-  }
+export default class apiUtils {
   static async fetchData(subURL) {
     try {
       let full_url = environment.base_url + subURL;
-      console.log(full_url);
+      //console.log(full_url);
 
       const response = await fetch(full_url);
 

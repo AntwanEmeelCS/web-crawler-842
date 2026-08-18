@@ -336,7 +336,10 @@
           </button>
 
           <!-- Hero Section -->
-          <div class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
+          <div
+            id="mealDetailsHeroSection"
+            class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8"
+          >
             <div class="relative h-80 md:h-96">
               <img
                 src="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg"
@@ -1073,6 +1076,7 @@
 
             <!-- Progress Bars -->
             <div
+              id="todayNutritionProgress"
               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"
             >
               <!-- Calories Progress -->
@@ -1139,6 +1143,28 @@
                 <h4 class="text-sm font-semibold text-gray-700">
                   Logged Items (0)
                 </h4>
+                <div class="nutritionTitles flex">
+                  <h4
+                    class="text-sm text-right font-semibold text-gray-700 mx-4"
+                  >
+                    Calories
+                  </h4>
+                  <h4
+                    class="text-sm text-right font-semibold text-gray-700 mx-4"
+                  >
+                    Carbs
+                  </h4>
+                  <h4
+                    class="text-sm text-right font-semibold text-gray-700 mx-4"
+                  >
+                    Fat
+                  </h4>
+                  <h4
+                    class="text-sm text-right font-semibold text-gray-700 mx-4"
+                  >
+                    Protein
+                  </h4>
+                </div>
                 <button
                   id="clear-foodlog"
                   class="text-red-500 hover:text-red-600 text-sm font-medium"
@@ -1164,7 +1190,10 @@
           </div>
 
           <!-- Weekly Overview -->
-          <div class="bg-white rounded-2xl p-6 mb-6 border-2 border-gray-200">
+          <div
+            id="weeklyOverview"
+            class="bg-white rounded-2xl p-6 mb-6 border-2 border-gray-200"
+          >
             <h3 class="text-lg font-bold text-gray-900 mb-4">
               <i class="fa-solid fa-calendar-week text-indigo-500 mr-2"></i>
               Weekly Overview
@@ -1183,7 +1212,10 @@
           </div>
 
           <!-- Quick Actions -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div
+            id="weeklyTotalInfo"
+            class="grid grid-cols-1 md:grid-cols-3 gap-4"
+          >
             <button
               class="quick-log-btn bg-white rounded-xl p-4 border-2 border-gray-200 hover:border-emerald-500 transition-all text-left flex items-center gap-4"
             >

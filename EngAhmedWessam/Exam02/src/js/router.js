@@ -1,5 +1,7 @@
+import foodLogWorker from "./foodLog/foodLogWorker.js";
 import recipeDetailsWorker from "./recipeWorkers/recipeDetailsWorker.js";
-import Utils from "./utils.js";
+import apiUtils from "./utilities/apiUtils.js";
+import uiUtilities from "./utilities/uiUtilities.js";
 
 export default class router {
   static setHeaderInfo(mainText, subText) {
@@ -24,39 +26,41 @@ export default class router {
 
     switch (funcName) {
       case "Meals & Recipes":
-        Utils.setElementDisplay(meals_searchFilter, "");
-        Utils.setElementDisplay(meals_categoriesSection, "");
-        Utils.setElementDisplay(meals_allRecipes, "");
-        Utils.setElementDisplay(mealDetails, "none");
-        Utils.setElementDisplay(productsSection, "none");
-        Utils.setElementDisplay(foodlogSection, "none");
+        uiUtilities.setElementDisplay(meals_searchFilter, "");
+        uiUtilities.setElementDisplay(meals_categoriesSection, "");
+        uiUtilities.setElementDisplay(meals_allRecipes, "");
+        uiUtilities.setElementDisplay(mealDetails, "none");
+        uiUtilities.setElementDisplay(productsSection, "none");
+        uiUtilities.setElementDisplay(foodlogSection, "none");
         break;
       case "Product Scanner":
-        Utils.setElementDisplay(meals_searchFilter, "none");
-        Utils.setElementDisplay(meals_categoriesSection, "none");
-        Utils.setElementDisplay(meals_allRecipes, "none");
-        Utils.setElementDisplay(mealDetails, "none");
-        Utils.setElementDisplay(productsSection, "");
-        Utils.setElementDisplay(foodlogSection, "none");
+        uiUtilities.setElementDisplay(meals_searchFilter, "none");
+        uiUtilities.setElementDisplay(meals_categoriesSection, "none");
+        uiUtilities.setElementDisplay(meals_allRecipes, "none");
+        uiUtilities.setElementDisplay(mealDetails, "none");
+        uiUtilities.setElementDisplay(productsSection, "");
+        uiUtilities.setElementDisplay(foodlogSection, "none");
 
         break;
       case "Food Log":
-        Utils.setElementDisplay(meals_searchFilter, "none");
-        Utils.setElementDisplay(meals_categoriesSection, "none");
-        Utils.setElementDisplay(meals_allRecipes, "none");
-        Utils.setElementDisplay(mealDetails, "none");
-        Utils.setElementDisplay(productsSection, "none");
-        Utils.setElementDisplay(foodlogSection, "");
+        foodLogWorker.prepareFoodLogPage();
+
+        uiUtilities.setElementDisplay(meals_searchFilter, "none");
+        uiUtilities.setElementDisplay(meals_categoriesSection, "none");
+        uiUtilities.setElementDisplay(meals_allRecipes, "none");
+        uiUtilities.setElementDisplay(mealDetails, "none");
+        uiUtilities.setElementDisplay(productsSection, "none");
+        uiUtilities.setElementDisplay(foodlogSection, "");
         break;
       case "Recipe Details":
         await recipeDetailsWorker.fillRecipeInfo(data);
 
-        Utils.setElementDisplay(meals_searchFilter, "none");
-        Utils.setElementDisplay(meals_categoriesSection, "none");
-        Utils.setElementDisplay(meals_allRecipes, "none");
-        Utils.setElementDisplay(mealDetails, "");
-        Utils.setElementDisplay(productsSection, "none");
-        Utils.setElementDisplay(foodlogSection, "none");
+        uiUtilities.setElementDisplay(meals_searchFilter, "none");
+        uiUtilities.setElementDisplay(meals_categoriesSection, "none");
+        uiUtilities.setElementDisplay(meals_allRecipes, "none");
+        uiUtilities.setElementDisplay(mealDetails, "");
+        uiUtilities.setElementDisplay(productsSection, "none");
+        uiUtilities.setElementDisplay(foodlogSection, "none");
 
         break;
       default:

@@ -1,6 +1,8 @@
 import router from "../router.js";
-import Utils from "../utils.js";
+import apiUtils from "../utilities/apiUtils.js";
 import recipeEvaluator from "./recipeEvaluator.js";
+import uiUtilities from "../utilities/uiUtilities.js";
+import appLocalStorageWorker from "../localStorageWorkers/appLocalStorageWorker.js";
 
 export default class recipeDetailsWorker {
   static async addBackButtonEventListener() {
@@ -12,8 +14,28 @@ export default class recipeDetailsWorker {
 
   static addLogThatMealEventListener() {
     let btn = document.getElementById("log-meal-btn");
+    let heroSection = document.getElementById("mealDetailsHeroSection");
     btn.addEventListener("click", function (e) {
-      alert("Feature under development!");
+      let mealInfo = {
+        name: document.getElementById("recipeName").innerText,
+        mealId: document.getElementById("recipeID").innerText,
+        category: document.getElementById("recipeCatagory").innerText,
+        thumbnail: document.getElementById("imgRecipe").src,
+        servings: 1,
+        nutrition: {
+          calories: +document.getElementById("servingCalories").innerText,
+          protein: +document
+            .getElementById("servingProtein")
+            .innerText.replace("g", ""),
+          carbs: +document
+            .getElementById("servingCarbs")
+            .innerText.replace("g", ""),
+          fat: +document
+            .getElementById("servingFat")
+            .innerText.replace("g", ""),
+        },
+      };
+      appLocalStorageWorker.recordMeal(mealInfo);
     });
   }
   static async prepareMealDetailsPage() {
@@ -48,7 +70,7 @@ export default class recipeDetailsWorker {
   ${this.mapIngredientListAPI(recipeMainInfo.result.ingredients)}
   ]
     }`;
-    return await Utils.postData(`nutrition/analyze`, body);
+    return await apiUtils.postData(`nutrition/analyze`, body);
   }
 
   static fillHeroSection(recipeMainInfo, recipeFacts) {
@@ -57,17 +79,17 @@ export default class recipeDetailsWorker {
     );
     //console.log(heroSectionDiv);
 
-    heroSectionDiv.innerHTML = `<div class="relative h-80 md:h-96">
-              <img src="${recipeMainInfo.result.thumbnail}" alt="${recipeMainInfo.result.name}" class="w-full h-full object-cover">
+    heroSectionDiv.innerHTML = `<div id="mealDetailsHeader" class="relative h-80 md:h-96">
+              <img id="imgRecipe" src="${recipeMainInfo.result.thumbnail}" alt="${recipeMainInfo.result.name}" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div class="absolute bottom-0 left-0 right-0 p-8">
                 <div class="flex items-center gap-3 mb-3">
-                  <span class="px-3 py-1 bg-emerald-500 text-white text-sm font-semibold rounded-full">${recipeMainInfo.result.category}</span>
-                  ${recipeMainInfo.result.area == null || recipeMainInfo.result.area.trim().length > 0 ? `<span class="px-3 py-1 bg-blue-500 text-white text-sm font-semibold rounded-full">${recipeMainInfo.result.area}</span>` : ``}
-                  
+                  <span id="recipeCatagory" class="px-3 py-1 bg-emerald-500 text-white text-sm font-semibold rounded-full">${recipeMainInfo.result.category}</span>
+                  ${recipeMainInfo.result.area != null && recipeMainInfo.result.area.trim().length > 0 ? `<span class="px-3 py-1 bg-blue-500 text-white text-sm font-semibold rounded-full">${recipeMainInfo.result.area}</span>` : ``}
+                  <span id="recipeID" class="px-3 py-1 bg-emerald-500 text-white text-sm font-semibold rounded-full" style="display: none;">${recipeMainInfo.result.id}</span>
                  
                 </div>
-                <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">
+                <h1 id="recipeName" class="text-3xl md:text-4xl font-bold text-white mb-2">
                   ${recipeMainInfo.result.name}
                 </h1>
                 <div class="flex items-center gap-6 text-white/90">
@@ -126,9 +148,9 @@ export default class recipeDetailsWorker {
       ytContentRef == undefined ||
       ytContentRef.trim().length == 0
     ) {
-      Utils.setElementDisplay(ytBox, "none");
+      uiUtilities.setElementDisplay(ytBox, "none");
     } else {
-      Utils.setElementDisplay(ytBox, "block");
+      uiUtilities.setElementDisplay(ytBox, "block");
 
       let videoBox = ytBox.querySelector("iframe");
       videoBox.setAttribute(
@@ -147,7 +169,7 @@ export default class recipeDetailsWorker {
             
             <div class="text-center py-4 mb-4 bg-linear-to-br from-emerald-50 to-teal-50 rounded-xl">
                 <p class="text-sm text-gray-600">Calories per serving</p>
-                <p class="text-4xl font-bold text-emerald-600">${perServingValues.calories}</p>
+                <p id="servingCalories" class="text-4xl font-bold text-emerald-600">${perServingValues.calories}</p>
                 <p class="text-xs text-gray-500 mt-1">Total: ${totalCalories} cal</p>
             </div>
             
@@ -157,7 +179,7 @@ export default class recipeDetailsWorker {
                         <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
                         <span class="text-gray-700">Protein</span>
                     </div>
-                    <span class="font-bold text-gray-900">${perServingValues.protein}g</span>
+                    <span id="servingProtein" class="font-bold text-gray-900">${perServingValues.protein}g</span>
                 </div>
                 <div class="w-full bg-gray-100 rounded-full h-2">
                     <div class="bg-emerald-500 h-2 rounded-full" style="width: ${recipeEvaluator.evaluateProteinPercentage(perServingValues.protein)}%"></div>
@@ -168,7 +190,7 @@ export default class recipeDetailsWorker {
                         <div class="w-3 h-3 rounded-full bg-blue-500"></div>
                         <span class="text-gray-700">Carbs</span>
                     </div>
-                    <span class="font-bold text-gray-900">${perServingValues.carbs}g</span>
+                    <span id="servingCarbs" class="font-bold text-gray-900">${perServingValues.carbs}g</span>
                 </div>
                 <div class="w-full bg-gray-100 rounded-full h-2">
                     <div class="bg-blue-500 h-2 rounded-full" style="width: ${recipeEvaluator.evaluateCarbsPercentage(perServingValues.carbs)}%"></div>
@@ -179,7 +201,7 @@ export default class recipeDetailsWorker {
                         <div class="w-3 h-3 rounded-full bg-purple-500"></div>
                         <span class="text-gray-700">Fat</span>
                     </div>
-                    <span class="font-bold text-gray-900">${perServingValues.fat}g</span>
+                    <span id="servingFat" class="font-bold text-gray-900">${perServingValues.fat}g</span>
                 </div>
                 <div class="w-full bg-gray-100 rounded-full h-2">
                     <div class="bg-purple-500 h-2 rounded-full" style="width: ${recipeEvaluator.evaluateFatPercentage(perServingValues.fat)}%"></div>
@@ -243,7 +265,7 @@ export default class recipeDetailsWorker {
       recipeID.trim().length > 0
     ) {
       //load api info
-      let recipeMainInfo = await Utils.fetchData(`meals/${recipeID}`);
+      let recipeMainInfo = await apiUtils.fetchData(`meals/${recipeID}`);
       setTimeout(() => {}, 500); //just wait
       let recipeFacts = await this.getRecipeFacts(recipeMainInfo);
       //fill elements

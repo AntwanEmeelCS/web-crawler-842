@@ -1,12 +1,13 @@
-import Utils from "../utils.js";
+import apiUtils from "../utilities/apiUtils.js";
 import environment from "../environment.js";
+import appLocalStorageWorker from "../localStorageWorkers/appLocalStorageWorker.js";
 
 export default class productWorker {
   static lastProductName = "";
   static lastBarcode = "";
   static lastCatagoryName = "";
   static async loadProductCatagories() {
-    let catagoryInfo = await Utils.fetchData(
+    let catagoryInfo = await apiUtils.fetchData(
       "products/categories?page=1&limit=30",
     );
     let catagoryBox = document.getElementById("product-categories");
@@ -37,8 +38,7 @@ export default class productWorker {
         let nutrients = element.nutrients;
         productCartoona += `<div class="product-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all cursor-pointer group" data-barcode="${element.barcode}">
                 <div class="relative h-40 bg-gray-100 flex items-center justify-center overflow-hidden">
-                  <img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="${element.image}" alt="${element.name}" loading="lazy">
-
+                  <img class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="${element.image != null ? element.image : `./src/images/productDefault.png`}" alt="${element.name}" loading="lazy">
                   <!-- Nutri-Score Badge -->
                   <div class="absolute top-2 left-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded uppercase">
                     ${element.nutritionGrade}
@@ -71,19 +71,19 @@ export default class productWorker {
                   <!-- Mini Nutrition -->
                   <div class="grid grid-cols-4 gap-1 text-center">
                     <div class="bg-emerald-50 rounded p-1.5">
-                      <p class="text-xs font-bold text-emerald-700">${nutrients.protein}g</p>
+                      <p class="text-xs font-bold text-emerald-700">${nutrients.protein.toFixed(2)}g</p>
                       <p class="text-[10px] text-gray-500">Protein</p>
                     </div>
                     <div class="bg-blue-50 rounded p-1.5">
-                      <p class="text-xs font-bold text-blue-700">${nutrients.carbs}g</p>
+                      <p class="text-xs font-bold text-blue-700">${nutrients.carbs.toFixed(2)}g</p>
                       <p class="text-[10px] text-gray-500">Carbs</p>
                     </div>
                     <div class="bg-purple-50 rounded p-1.5">
-                      <p class="text-xs font-bold text-purple-700">${nutrients.fat}g</p>
+                      <p class="text-xs font-bold text-purple-700">${nutrients.fat.toFixed(2)}g</p>
                       <p class="text-[10px] text-gray-500">Fat</p>
                     </div>
                     <div class="bg-orange-50 rounded p-1.5">
-                      <p class="text-xs font-bold text-orange-700">${nutrients.sugar}g</p>
+                      <p class="text-xs font-bold text-orange-700">${nutrients.sugar.toFixed(2)}g</p>
                       <p class="text-[10px] text-gray-500">Sugar</p>
                     </div>
                   </div>
@@ -108,6 +108,28 @@ export default class productWorker {
               </div>`;
     }
   }
+
+  static async addProductCardEventListener() {
+    let productCards = document.querySelectorAll(
+      "#products-grid .product-card",
+    );
+    for (let index = 0; index < productCards.length; index++) {
+      const element = productCards[index];
+
+      element.addEventListener("click", async (e) => {
+        const userChoice = confirm(
+          "Clicking a product card will add the product info to log. Continue?",
+        );
+        if (userChoice) {
+          let productBarcode = element.getAttribute("data-barcode");
+          let productInfo = await apiUtils.fetchData(
+            `products/barcode/${productBarcode}`,
+          );
+          appLocalStorageWorker.recordProduct(productInfo);
+        }
+      });
+    }
+  }
   //catagory
   static async fillProductsByCatagory(
     catagory_name,
@@ -119,11 +141,12 @@ export default class productWorker {
     if (this.lastBarcode != "") {
       this.clearBarCodeChoice();
     }
-    let apiData = await Utils.fetchData(
+    let apiData = await apiUtils.fetchData(
       `products/category/${catagory_name}?page=1&limit=${productCount}`,
     );
     this.lastCatagoryName = catagory_name;
     this.fillProductList(apiData.results);
+    await this.addProductCardEventListener();
   }
   static async addCatagoryButtonListeners() {
     let buttons = document.querySelectorAll("#product-categories button");
@@ -154,9 +177,12 @@ export default class productWorker {
     if (this.lastCatagoryName != "") {
       this.clearCatagoryChoice();
     }
-    let apiInfo = await Utils.fetchData(`products/search?q=${queryString}`);
+    let apiInfo = await apiUtils.fetchData(`products/search?q=${queryString}`);
+    //console.log(apiInfo);
+
     this.lastProductName = queryString;
     this.fillProductList(apiInfo.results);
+    await this.addProductCardEventListener();
   }
 
   static async addBtnSearchByNameListener() {
@@ -183,12 +209,13 @@ export default class productWorker {
     if (this.lastCatagoryName != "") {
       this.clearCatagoryChoice();
     }
-    let apiInfo = await Utils.fetchData(`products/barcode/${barcode}`);
+    let apiInfo = await apiUtils.fetchData(`products/barcode/${barcode}`);
 
-    console.log(apiInfo);
+    //console.log(apiInfo);
 
     this.lastBarcode = barcode;
     this.fillProductList([apiInfo.result]);
+    await this.addProductCardEventListener();
   }
 
   static async addBtnSearchByBarcodeListener() {

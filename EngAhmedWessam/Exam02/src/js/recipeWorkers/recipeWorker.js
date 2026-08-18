@@ -1,4 +1,4 @@
-import Utils from "../utils.js";
+import apiUtils from "../utilities/apiUtils.js";
 import environment from "../environment.js";
 import router from "../router.js";
 export default class recipeWorker {
@@ -11,7 +11,7 @@ export default class recipeWorker {
   //functions
   static async prepareMealAreas() {
     let areaDiv = document.querySelector("#search-filters-section div .flex");
-    let areaInfo = await Utils.fetchData("meals/areas");
+    let areaInfo = await apiUtils.fetchData("meals/areas");
     //console.log(areaInfo);
     //include all first
     let areaCartoona = `<button class="area-filter-btn px-4 py-2 bg-emerald-600 text-white rounded-full font-medium text-sm whitespace-nowrap hover:bg-emerald-700 hover:text-white transition-all" data-area="">
@@ -29,7 +29,7 @@ export default class recipeWorker {
 
   static async prepareMealsCatagories() {
     let catagoriesGrid = document.getElementById("categories-grid");
-    let catagoriesInfo = await Utils.fetchData("meals/categories");
+    let catagoriesInfo = await apiUtils.fetchData("meals/categories");
     let catagoriesCartoona = ``;
     for (let index = 0; index < catagoriesInfo.results.length; index++) {
       const element = catagoriesInfo.results[index];
@@ -127,7 +127,9 @@ export default class recipeWorker {
   static async loadRandomRecipes(recipeCount = environment.recipeCountMax) {
     this.setRecipeCount(recipeCount, "");
 
-    let recipeInfo = await Utils.fetchData(`meals/random?count=${recipeCount}`);
+    let recipeInfo = await apiUtils.fetchData(
+      `meals/random?count=${recipeCount}`,
+    );
     this.fillRecipeGrid(recipeInfo);
     this.addRecipeListner();
   }
@@ -139,7 +141,7 @@ export default class recipeWorker {
     if (this.lastChosenCatagory.trim().length > 0) {
       this.clearCatagoryElements();
     }
-    let recipeInfo = await Utils.fetchData(`meals/search?q=${filterString}`);
+    let recipeInfo = await apiUtils.fetchData(`meals/search?q=${filterString}`);
     this.setRecipeCount(recipeInfo.results.length, filterString);
     this.fillRecipeGrid(recipeInfo);
     this.addRecipeListner();
@@ -171,7 +173,7 @@ export default class recipeWorker {
       if (this.lastChosenCatagory.trim().length > 0) {
         this.clearCatagoryElements();
       }
-      let recipeInfo = await Utils.fetchData(
+      let recipeInfo = await apiUtils.fetchData(
         `meals/filter?area=${filterString}&limit=${recipeCount}`,
       );
       this.setRecipeCount(recipeInfo.results.length, filterString);
@@ -242,7 +244,7 @@ export default class recipeWorker {
       if (this.lastChosenArea.trim().length > 0) {
         this.clearAreaElements();
       }
-      let recipeInfo = await Utils.fetchData(
+      let recipeInfo = await apiUtils.fetchData(
         `meals/filter?category=${filterString}&limit=${recipeCount}`,
       );
       this.setRecipeCount(recipeInfo.results.length, filterString);
@@ -268,6 +270,81 @@ export default class recipeWorker {
   static clearCatagoryElements() {
     this.lastChosenCatagory = "";
   }
+
+  static convertGridStyle(targetStyleName) {
+    let btnGrid = document.getElementById("grid-view-btn");
+    let btnList = document.getElementById("list-view-btn");
+
+    let recipeGrid = document.getElementById("recipes-grid");
+    let recipeCards = recipeGrid.querySelectorAll(".recipe-card");
+    let relativeDivs = recipeGrid.querySelector(".recipe-card .relative");
+    let absoluteDivs = recipeGrid.querySelector(
+      ".recipe-card .relative .absolute",
+    );
+    if (targetStyleName == "grid") {
+      //buttons
+      btnGrid.classList.add("bg-white", "rounded-md", "shadow-sm");
+      btnList.classList.remove("bg-white", "rounded-md", "shadow-sm");
+      //grid
+      recipeGrid.classList.add("grid-cols-4", "gap-5");
+      recipeGrid.classList.remove("grid-cols-2", "gap-4");
+      //recipe cards
+      for (let index = 0; index < recipeCards.length; index++) {
+        const element = recipeCards[index];
+        element.classList.remove("flex", "flex-row", "h-40");
+      }
+      //relative divs
+      for (let index = 0; index < relativeDivs.length; index++) {
+        const element = relativeDivs[index];
+        element.classList.add("h-full");
+      }
+      //absolute divs
+      for (let index = 0; index < absoluteDivs.length; index++) {
+        const element = absoluteDivs[index];
+        element.classList.remove("hidden");
+      }
+    } else if (targetStyleName == "list") {
+      //buttons
+      btnGrid.classList.remove("bg-white", "rounded-md", "shadow-sm");
+      btnList.classList.add("bg-white", "rounded-md", "shadow-sm");
+      //grid
+      recipeGrid.classList.remove("grid-cols-4", "gap-5");
+      recipeGrid.classList.add("grid-cols-2", "gap-4");
+      //recipe cards
+      for (let index = 0; index < recipeCards.length; index++) {
+        const element = recipeCards[index];
+        element.classList.add("flex", "flex-row", "h-40");
+      }
+      //relative divs
+      for (let index = 0; index < relativeDivs.length; index++) {
+        const element = relativeDivs[index];
+        element.classList.remove("h-full");
+      }
+      //absolute divs
+      for (let index = 0; index < absoluteDivs.length; index++) {
+        const element = absoluteDivs[index];
+        element.classList.add("hidden");
+      }
+    } else {
+      console.error(`Invalid Passed Style Name: ${targetStyleName}`);
+    }
+  }
+
+  static addGridStyleListeners() {
+    let btnGrid = document.getElementById("grid-view-btn");
+    let btnList = document.getElementById("list-view-btn");
+
+    btnGrid.addEventListener("click", (e) => {
+      this.convertGridStyle("grid");
+      e.stopPropagation();
+    });
+
+    btnList.addEventListener("click", (e) => {
+      this.convertGridStyle("list");
+      e.stopPropagation();
+    });
+  }
+
   //initialization
   static async prepareMealsPage() {
     //search text
@@ -284,5 +361,7 @@ export default class recipeWorker {
     await this.addCatagoryListners();
     //fill recipe pan
     await this.loadRandomRecipes();
+    //grid style
+    this.addGridStyleListeners();
   }
 }
