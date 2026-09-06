@@ -3,9 +3,122 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Product Local Storage</title>
+    <link rel="stylesheet" href="./styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="./styles/myStyles.css" />
   </head>
   <body>
-    <h1>Under Contruction. Will Be finished soon!</h1>
+    <div class="container" style="display: flex; flex-direction: column">
+      <div class="mx-auto">
+        <h1 class="text-center">Product Local Storage</h1>
+      </div>
+      <div class="p-4 w-100" style="text-align: left; flex-grow: 1">
+        <form>
+          <div class="prodName" style="display: flex">
+            <label class="form-label p-2 m-2 w-25" for="txtProductName"
+              >Product Name</label
+            >
+            <input
+              class="form-control p-2 m-2 w-75"
+              type="text"
+              name="ProductName"
+              id="txtProductName"
+              required
+              minlength="5"
+              placeholder="Enter Product Name"
+            />
+          </div>
+
+          <div class="prodCatagory w-100" style="display: flex">
+            <label class="form-label p-2 m-2 w-25" for="txtProductCategory"
+              >Product Category</label
+            >
+            <input
+              class="form-control p-2 m-2 w-75"
+              type="text"
+              name="ProductCategory"
+              id="txtProductCategory"
+              required
+              minlength="5"
+              placeholder="Enter Product Category"
+            />
+          </div>
+
+          <div class="prodPrice" style="display: flex">
+            <label class="form-label p-2 m-2 w-25" for="txtProductPrice"
+              >Product Price</label
+            >
+            <input
+              type="number"
+              name="Price"
+              id="txtProductPrice"
+              required
+              min="10"
+              class="form-control"
+              style="width: 100px"
+            />
+          </div>
+          <div class="prodImage" style="display: flex">
+            <label class="form-label p-2 m-2 w-25" for="dlgProductImage"
+              >Product Image</label
+            >
+            <input
+              style="padding: 0; margin: 1rem"
+              type="file"
+              name="ProductImage"
+              id="dlgProductImage"
+              required
+            />
+          </div>
+          <div class="FormActions">
+            <input
+              class="btn btn-primary"
+              type="button"
+              value="Add Product"
+              id="btnAddProduct"
+            />
+            <input
+              class="btn btn-secondary"
+              type="button"
+              value="Update Product"
+              id="btnUpdateProduct"
+              data-product-to-update-index="-1"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="searchDiv" style="padding: 10px">
+        <input
+          type="text"
+          name="searchByName"
+          id="txtSearchByName"
+          placeholder="Search Product By Name"
+          class="form-control"
+        />
+      </div>
+      <!-- <div class="p-4 w-100">
+        <table class="table border border-2">
+          <thead>
+            <th>IMG</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Controls</th>
+          </thead>
+          <tr>
+            <td>IMG</td>
+            <td>Name</td>
+            <td>Category</td>
+            <td>Price</td>
+            <td>Controls</td>
+          </tr>
+        </table>
+      </div> -->
+      <main class="product-grid"></main>
+    </div>
+
+    <script type="module" src="./scripts/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./scripts/localStorageWorker.js"></script>
+    <script type="module" src="./scripts/scripts.js"></script>
   </body>
 </html>
