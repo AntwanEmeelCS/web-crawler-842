@@ -1,0 +1,135 @@
+.navbar {
+  .container-fluid {
+    .siteHeading {
+      .iconRounded {
+        background-color: #ff4f18;
+      }
+    }
+    .collapse {
+      ul {
+        li {
+          a {
+            .linkItem {
+              img {
+                width: 2.5rem;
+                height: 2.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.recipeContainer {
+  .row {
+    height: 400px;
+    .recipeImage {
+      border-bottom-right-radius: var(--bs-border-radius-xxl) !important;
+      border-top-right-radius: var(--bs-border-radius-xxl) !important;
+
+      .recipeRating {
+        top: 1rem;
+        left: 1rem;
+        .ratingContent {
+          i {
+            color: gold;
+          }
+        }
+      }
+      .recipeCookingTime {
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+      }
+    }
+    .recipeDetails {
+      .totalTitle {
+        .recipeTitle {
+          .recipeTags {
+            .tagDiff {
+              background-color: #dbfce7;
+              color: #008236;
+              font-size: 0.75rem;
+            }
+            .tagCountry {
+              background-color: #dbeafe;
+              color: #1480f0;
+              font-size: 0.75rem;
+            }
+          }
+          .recipeName {
+            h3 {
+              font-size: 1.5rem;
+            }
+          }
+        }
+        .bookMarkShare {
+          .iconBg {
+            background-color: #ffd6a7;
+            color: #f54900;
+            font-size: 1rem;
+          }
+        }
+      }
+      .extendedTime {
+        background-color: #fef2f2;
+        .text-red1 {
+          color: #a10b16;
+        }
+        .text-red2 {
+          color: #e7000b;
+        }
+      }
+      .recipeTabs {
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .navbar {
+    .container-fluid {
+      .siteHeading {
+        i {
+          font-size: 1.75rem;
+        }
+      }
+      .collapse {
+        ul {
+          li {
+            a {
+              .linkItem {
+                .showAtMedium {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .recipeContainer {
+    .row {
+      height: calc(100vh - 192px);
+      .recipeImage {
+        border-bottom-right-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+      }
+      .recipeDetails {
+        padding: 2.5rem;
+        .totalTitle {
+          .recipeTitle {
+            .recipeName {
+              h3 {
+                font-size: 2.25rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

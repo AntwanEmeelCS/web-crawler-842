@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment08 - What's For Dinner?</title>
+    <link rel="stylesheet" href="./styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="./styles/fa-all.min.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container-fluid">
+        <div class="siteHeading d-flex flex-row">
+          <div
+            class="iconRounded d-flex align-items-center border rounded-circle p-2 m-3"
+          >
+            <i class="fa-solid fa-utensils fs-4 text-white"></i>
+          </div>
+          <div class="siteInfo d-flex flex-column">
+            <div class="siteTitle">
+              <h1 class="fs-4 fw-bold text-black pt-3">What's For Dinner</h1>
+            </div>
+            <div class="siteSubtitle">
+              <p class="text-secondary fs-6 py-0 my-0">
+                Your daily meal inspiration
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="sep flex-grow-1"></div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse flex-grow-0 pe-3"
+          id="navbarNavDropdown"
+        >
+          <ul class="navbar-nav align-content-center">
+            <li class="nav-item py-lg-3">
+              <a class="nav-link active" aria-current="page" href="#">
+                <div
+                  class="linkItem d-flex flex-row align-items-center justify-content-start"
+                >
+                  <i
+                    class="fa-solid fa-bookmark fs-4 px-4 pt-2 text-secondary-emphasis"
+                  ></i>
+                  <span class="showAtMedium ps-2">Saved Recipes</span>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item py-lg-3">
+              <a class="nav-link" href="#"
+                ><div
+                  class="linkItem d-flex flex-row align-items-center justify-content-start"
+                >
+                  <i
+                    class="fa-solid fa-clock-rotate-left fs-4 px-4 pt-2 text-secondary-emphasis"
+                  ></i>
+                  <span class="showAtMedium ps-2">Recent</span>
+                </div></a
+              >
+            </li>
+            <li class="nav-item py-lg-3">
+              <a class="nav-link" href="#"
+                ><div
+                  class="linkItem d-flex flex-row align-items-center justify-content-start"
+                >
+                  <i
+                    class="fa-solid fa-gear fs-4 px-4 pt-2 text-secondary-emphasis"
+                  ></i>
+                  <span class="showAtMedium ps-2">Settings</span>
+                </div></a
+              >
+            </li>
+            <li class="nav-item py-lg-3">
+              <a class="nav-link" href="#"
+                ><div
+                  class="linkItem d-flex flex-row align-items-center justify-content-start px-4"
+                >
+                  <img
+                    src="./images/profile.jpg"
+                    alt="Profile Image"
+                    srcset=""
+                    class="rounded-circle border-2"
+                  />
+                  <span class="showAtMedium ps-2">Profile</span>
+                </div></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="recipeContainer container py-5">
+      <div class="row g-0 border border-1 border-black rounded-5">
+        <div
+          class="recipeImage position-relative col-lg-4 overflow-hidden h-100"
+        >
+          <img
+            id="recipeImage"
+            class="w-100 rounded-start-5 object-fit-cover h-100"
+            src="./images/example-recipe.jfif"
+            alt=""
+            srcset=""
+          />
+          <div class="recipeRating bg-white rounded-pill p-2 position-absolute">
+            <div
+              class="ratingContent d-flex flex-row justify-content-around align-content-center"
+            >
+              <i class="fa-solid fa-star fs-5 p-1"></i>
+              <span class="fw-semibold fs-6 p-1">4.8</span>
+              <span class="text-secondary fs-6 p-1">(356 reviews)</span>
+            </div>
+          </div>
+          <div class="recipeCookingTime bg-white rounded-4 position-absolute">
+            <div class="d-flex flex-row justify-content-evenly mx-4 p-4">
+              <div
+                class="d-flex flex-column align-items-center justify-content-center"
+              >
+                <i class="fa-solid fa-clock fs-3" style="color: orange"></i>
+                <span class="text-secondary fs-6">Prep Time </span>
+                <span class="text-black fw-bold fs-6">10 min </span>
+              </div>
+              <div
+                class="d-flex flex-column align-items-center justify-content-center"
+              >
+                <i class="fa-solid fa-fire-burner fs-3"></i>
+                <span class="text-secondary fs-6" style="color: red"
+                  >Cook Time
+                </span>
+                <span class="text-black fw-bold fs-6">10 min </span>
+              </div>
+              <div
+                class="d-flex flex-column align-items-center justify-content-center"
+              >
+                <i class="fa-solid fa-users fs-3" style="color: blue"></i>
+                <span class="text-secondary fs-6">Servings</span>
+                <span class="text-black fw-bold fs-6">2 People</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="recipeDetails col-lg-8 d-flex flex-column">
+          <div
+            class="totalTitle d-flex flex-row align-items-center justify-content-between"
+          >
+            <div
+              class="recipeTitle w-100 d-flex flex-column align-items-start justify-content-evenly"
+            >
+              <div class="recipeTags d-flex flex-row align-items-start">
+                <div class="tagDiff rounded-pill p-2 mx-1 fw-bold">Easy</div>
+                <div class="tagCountry rounded-pill p-2 mx-1 fw-bold">
+                  Italian
+                </div>
+              </div>
+              <div class="recipeName">
+                <h3 class="fw-bolder">Caprese Sandwich</h3>
+              </div>
+              <div class="recipeDesc">
+                <p class="text-secondary fs-5">
+                  Fresh Italian sandwich with mozzarella, tomato, and basil
+                </p>
+              </div>
+            </div>
+            <div class="bookMarkShare d-flex flex-row">
+              <div class="iconBg p-2 rounded-3 m-1">
+                <i class="fa-solid fa-bookmark"></i>
+              </div>
+              <div class="iconBg p-2 rounded-3 m-1">
+                <i class="fa-solid fa-share-nodes"></i>
+              </div>
+            </div>
+          </div>
+          <div class="recipeTabs">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="pills-ingredients-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-ingredents"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-ingredents"
+                  aria-selected="true"
+                >
+                  Ingredients
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-instructions-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-instructions"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-instructions"
+                  aria-selected="false"
+                >
+                  Instructions
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-nutrition-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-nutrition"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-nutrition"
+                  aria-selected="false"
+                >
+                  Nutrition
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-chefTips-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-chefTips"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-chefTips"
+                  aria-selected="false"
+                >
+                  Chef Tips
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="pills-ingredents"
+                role="tabpanel"
+                aria-labelledby="pills-ingredents-tab"
+                tabindex="0"
+              >
+                here comes ingredients
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pills-instructions"
+                role="tabpanel"
+                aria-labelledby="pills-instructions-tab"
+                tabindex="0"
+              >
+                here comes instructions
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pills-nutrition"
+                role="tabpanel"
+                aria-labelledby="pills-nutrition-tab"
+                tabindex="0"
+              >
+                here comes nutrition data
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pills-chefTips"
+                role="tabpanel"
+                aria-labelledby="pills-chefTips-tab"
+                tabindex="0"
+              >
+                Here comes chef tips
+              </div>
+            </div>
+          </div>
+          <div class="tryNewRecipe">
+            <button id="btnTryAnotherRecipe">
+              <i class="fa-solid fa-arrows-rotate"></i
+              ><span>Try Another Recipe</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
