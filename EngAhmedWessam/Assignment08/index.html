@@ -151,12 +151,14 @@
           </div>
         </div>
 
-        <div class="recipeDetails col-lg-8 d-flex flex-column">
+        <div
+          class="recipeDetails col-lg-8 d-flex flex-column overflow-y-auto pt-3"
+        >
           <div
             class="totalTitle d-flex flex-row align-items-center justify-content-between"
           >
             <div
-              class="recipeTitle w-100 d-flex flex-column align-items-start justify-content-evenly"
+              class="recipeTitle w-90 d-flex flex-column align-items-start justify-content-evenly"
             >
               <div class="recipeTags d-flex flex-row align-items-start">
                 <div class="tagDiff rounded-pill p-2 mx-1 fw-bold">Easy</div>
@@ -168,7 +170,7 @@
                 <h3 class="fw-bolder">Caprese Sandwich</h3>
               </div>
               <div class="recipeDesc">
-                <p class="text-secondary fs-5">
+                <p class="text-secondary fs-6">
                   Fresh Italian sandwich with mozzarella, tomato, and basil
                 </p>
               </div>
@@ -243,48 +245,261 @@
             </ul>
             <div class="tab-content" id="pills-tabContent">
               <div
-                class="tab-pane fade show active"
+                class="tab-pane fade show active overflow-y-auto h-100"
                 id="pills-ingredents"
                 role="tabpanel"
                 aria-labelledby="pills-ingredents-tab"
                 tabindex="0"
               >
-                here comes ingredients
+                <div
+                  id="ingredients-content"
+                  class="d-flex flex-column align-items-start"
+                >
+                  <div class="d-flex flex-row align-items-start">
+                    <div
+                      class="bgOrange text-white rounded-circle p-2 mt-3 d-flex align-items-center justify-content-center"
+                      style="aspect-ratio: 1; height: 100%"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="p-2 m-2 d-flex align-items-center justify-content-center"
+                    >
+                      12 lasagna sheets
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-start">
+                    <div
+                      class="bgOrange text-white rounded-circle p-2 mt-3 d-flex align-items-center justify-content-center"
+                      style="aspect-ratio: 1; height: 100%"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="p-2 m-2 d-flex align-items-center justify-content-center"
+                    >
+                      12 lasagna sheets
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-start">
+                    <div
+                      class="bgOrange text-white rounded-circle p-2 mt-3 d-flex align-items-center justify-content-center"
+                      style="aspect-ratio: 1; height: 100%"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="p-2 m-2 d-flex align-items-center justify-content-center"
+                    >
+                      12 lasagna sheets
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-start">
+                    <div
+                      class="bgOrange text-white rounded-circle p-2 mt-3 d-flex align-items-center justify-content-center"
+                      style="aspect-ratio: 1; height: 100%"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="p-2 m-2 d-flex align-items-center justify-content-center"
+                    >
+                      12 lasagna sheets
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-start">
+                    <div
+                      class="bgOrange text-white rounded-circle p-2 mt-3 d-flex align-items-center justify-content-center"
+                      style="aspect-ratio: 1; height: 100%"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="p-2 m-2 d-flex align-items-center justify-content-center"
+                    >
+                      12 lasagna sheets
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-start">
+                    <div
+                      class="bgOrange text-white rounded-circle p-2 mt-3 d-flex align-items-center justify-content-center"
+                      style="aspect-ratio: 1; height: 100%"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="p-2 m-2 d-flex align-items-center justify-content-center"
+                    >
+                      12 lasagna sheets
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-start">
+                    <div
+                      class="bgOrange text-white rounded-circle p-2 mt-3 d-flex align-items-center justify-content-center"
+                      style="aspect-ratio: 1; height: 100%"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="p-2 m-2 d-flex align-items-center justify-content-center"
+                    >
+                      12 lasagna sheets
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-start">
+                    <div
+                      class="bgOrange text-white rounded-circle p-2 mt-3 d-flex align-items-center justify-content-center"
+                      style="aspect-ratio: 1; height: 100%"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="p-2 m-2 d-flex align-items-center justify-content-center"
+                    >
+                      12 lasagna sheets
+                    </div>
+                  </div>
+                </div>
               </div>
               <div
-                class="tab-pane fade"
+                class="tab-pane fade overflow-y-auto h-100"
                 id="pills-instructions"
                 role="tabpanel"
                 aria-labelledby="pills-instructions-tab"
                 tabindex="0"
               >
-                here comes instructions
+                <div
+                  id="instruction-list"
+                  class="d-flex flex-column align-items-start"
+                ></div>
               </div>
               <div
-                class="tab-pane fade"
+                class="tab-pane fade overflow-y-auto h-100"
                 id="pills-nutrition"
                 role="tabpanel"
                 aria-labelledby="pills-nutrition-tab"
                 tabindex="0"
               >
-                here comes nutrition data
+                <div id="nutrition-list" class="container">
+                  <div class="parentDiv row">
+                    <div
+                      class="div1 col-12 col-md-6 d-flex flex-column align-items-start my-3"
+                    >
+                      <div
+                        class="nutritionElement w-100 p-2 d-flex flex-row align-items-center justify-content-between"
+                      >
+                        <div
+                          class="nutritionElementIcon d-flex flex-row align-items-center justify-content-start"
+                        >
+                          <i
+                            class="fa-solid fa-fire fs-4 text-success-emphasis bg-secondary-subtle rounded-3 p-2 text-center"
+                          ></i>
+                          <div class="nutritionElementName p-2 fs-5">
+                            Calories
+                          </div>
+                        </div>
+                        <div class="nutritionValue fs-5 fw-bold">680 kcal</div>
+                      </div>
+                      <div
+                        class="nutritionElement w-100 p-2 d-flex flex-row align-items-center justify-content-between"
+                      >
+                        <div
+                          class="nutritionElementIcon d-flex flex-row align-items-center justify-content-start"
+                        >
+                          <i
+                            class="fa-solid fa-wheat-awn fs-4 text-success-emphasis bg-secondary-subtle rounded-3 p-2 text-center"
+                          ></i>
+                          <div class="nutritionElementName p-2 fs-5">
+                            Carbohydrates
+                          </div>
+                        </div>
+                        <div class="nutritionValue fs-5 fw-bold">58g</div>
+                      </div>
+                      <div
+                        class="nutritionElement w-100 p-2 d-flex flex-row align-items-center justify-content-between"
+                      >
+                        <div
+                          class="nutritionElementIcon d-flex flex-row align-items-center justify-content-start"
+                        >
+                          <i
+                            class="fa-solid fa-seedling fs-4 text-success-emphasis bg-secondary-subtle rounded-3 p-2 text-center"
+                          ></i>
+                          <div class="nutritionElementName p-2 fs-5">Fiber</div>
+                        </div>
+                        <div class="nutritionValue fs-5 fw-bold">6g</div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="div2 col-12 col-md-6 d-flex flex-column align-items-start my-3"
+                    >
+                      <div
+                        class="nutritionElement w-100 p-2 d-flex flex-row align-items-center justify-content-between"
+                      >
+                        <div
+                          class="nutritionElementIcon d-flex flex-row align-items-center justify-content-start"
+                        >
+                          <i
+                            class="fa-solid fa-dumbbell fs-4 text-success-emphasis bg-secondary-subtle rounded-3 p-2 text-center"
+                          ></i>
+                          <div class="nutritionElementName p-2 fs-5">
+                            Protein
+                          </div>
+                        </div>
+                        <div class="nutritionValue fs-5 fw-bold">42g</div>
+                      </div>
+                      <div
+                        class="nutritionElement w-100 p-2 d-flex flex-row align-items-center justify-content-between"
+                      >
+                        <div
+                          class="nutritionElementIcon d-flex flex-row align-items-center justify-content-start"
+                        >
+                          <i
+                            class="fa-solid fa-droplet fs-4 text-success-emphasis bg-secondary-subtle rounded-3 p-2 text-center"
+                          ></i>
+                          <div class="nutritionElementName p-2 fs-5">Fat</div>
+                        </div>
+                        <div class="nutritionValue fs-5 fw-bold">28g</div>
+                      </div>
+                      <div
+                        class="nutritionElement w-100 p-2 d-flex flex-row align-items-center justify-content-between"
+                      >
+                        <div
+                          class="nutritionElementIcon d-flex flex-row align-items-center justify-content-start"
+                        >
+                          <i
+                            class="fa-solid fa-cube fs-4 text-success-emphasis bg-secondary-subtle rounded-3 p-2 text-center"
+                          ></i>
+                          <div class="nutritionElementName p-2 fs-5">
+                            Sodium
+                          </div>
+                        </div>
+                        <div class="nutritionValue fs-5 fw-bold">920mg</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div
-                class="tab-pane fade"
+                class="tab-pane fade overflow-y-auto h-100"
                 id="pills-chefTips"
                 role="tabpanel"
                 aria-labelledby="pills-chefTips-tab"
                 tabindex="0"
               >
-                Here comes chef tips
+                <div
+                  id="chef-tips"
+                  class="d-flex flex-column align-items-start"
+                ></div>
               </div>
             </div>
           </div>
-          <div class="tryNewRecipe">
-            <button id="btnTryAnotherRecipe">
-              <i class="fa-solid fa-arrows-rotate"></i
-              ><span>Try Another Recipe</span>
-            </button>
+          <div
+            id="btnTryAnotherRecipe"
+            class="text-white fw-medium my-4 rounded-pill p-2 d-flex flex-row align-items-center justify-content-evenly"
+          >
+            <i class="fa-solid fa-arrows-rotate"></i
+            ><span>Try Another Recipe</span>
           </div>
         </div>
       </div>

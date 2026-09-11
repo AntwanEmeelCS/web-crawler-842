@@ -83,6 +83,22 @@
         }
       }
       .recipeTabs {
+        .tab-content {
+          flex: 1;
+          min-height: 0;
+          height: 15rem;
+          .tab-pane {
+            background-color: #fff9ec;
+            .bgOrange {
+              background-color: #ff6900;
+            }
+          }
+        }
+      }
+      #btnTryAnotherRecipe {
+        background-image: linear-gradient(to right, #f44900, #e7000a);
+        cursor: pointer;
+        width: 12rem;
       }
     }
   }
@@ -124,7 +140,20 @@
           .recipeTitle {
             .recipeName {
               h3 {
-                font-size: 2.25rem;
+                font-size: 2rem;
+              }
+            }
+          }
+        }
+        .recipeTabs {
+          .tab-content {
+            flex: 1;
+            min-height: 0;
+
+            .tab-pane {
+              background-color: #fff9ec;
+              .bgOrange {
+                background-color: #ff6900;
               }
             }
           }

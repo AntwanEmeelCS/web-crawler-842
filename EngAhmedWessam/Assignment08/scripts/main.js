@@ -969,27 +969,201 @@ function FillRecipeTitle(recipeObject) {
                 <h3 class="fw-bolder">${recipeObject.name}</h3>
               </div>
               <div class="recipeDesc">
-                <p class="text-secondary fs-5">
+                <p class="text-secondary fs-6">
                   ${recipeObject.description}
                 </p>
               </div>`;
-  if (recipeObject.totalTime >= 45) {
-    cartoona += `<div class="extendedTime rounded-2 p-2">
-            <p class="text-red1">Extended Preparation Time</p>
-            <p class="text-red2">
-              This recipe requires more than 45 minutes to prepare. Plan
-              accordingly!
-            </p>
-          </div>`;
-  }
+  // if (recipeObject.totalTime >= 45) {
+  //   cartoona += `<div class="extendedTime rounded-2 p-2">
+  //           <p class="text-red1">Extended Preparation Time</p>
+  //           <p class="text-red2">
+  //             This recipe requires more than 45 minutes to prepare. Plan
+  //             accordingly!
+  //           </p>
+  //         </div>`;
+  // }
   divTitle.innerHTML = cartoona;
 }
 
+function FillIngredientList(recipeObject) {
+  let ingredientList = document.getElementById("ingredients-content");
+  let cartoona = ``;
+
+  for (let index = 0; index < recipeObject.ingredients.length; index++) {
+    const element = recipeObject.ingredients[index];
+    cartoona += `<div class="d-flex flex-row align-items-start">
+                    <div
+                      class="bgOrange text-white rounded-circle p-2 mt-3 d-flex align-items-center justify-content-center"
+                      style="aspect-ratio: 1; height: 100%"
+                    >
+                      ${index + 1}
+                    </div>
+                    <div
+                      class="p-2 m-2 d-flex align-items-center justify-content-center"
+                    >
+                      ${element}
+                    </div>
+                  </div>`;
+  }
+  ingredientList.innerHTML = cartoona;
+}
+
+function FillInstructionList(recipeObject) {
+  let instructionList = document.getElementById("instruction-list");
+  let cartoona = ``;
+
+  for (let index = 0; index < recipeObject.instructions.length; index++) {
+    const element = recipeObject.instructions[index];
+    cartoona += `<div class="d-flex flex-row align-items-start">
+                    <div
+                      class="bgOrange text-white rounded-circle p-2 mt-3 d-flex align-items-center justify-content-center"
+                      style="aspect-ratio: 1; height: 100%"
+                    >
+                      ${index + 1}
+                    </div>
+                    <div
+                      class="p-2 m-2 d-flex align-items-center justify-content-center"
+                    >
+                      ${element}
+                    </div>
+                  </div>`;
+  }
+  instructionList.innerHTML = cartoona;
+}
+
+function FillNutritionList(recipeObject) {
+  let nutriList = document.getElementById("nutrition-list");
+  let cartoona = `<div class="parentDiv row">
+                    <div
+                      class="div1 col-12 col-md-6 d-flex flex-column align-items-start my-3"
+                    >
+                      <div
+                        class="nutritionElement w-100 p-2 d-flex flex-row align-items-center justify-content-between"
+                      >
+                        <div
+                          class="nutritionElementIcon d-flex flex-row align-items-center justify-content-start"
+                        >
+                          <i
+                            class="fa-solid fa-fire fs-4 text-success-emphasis bg-secondary-subtle rounded-3 p-2 text-center"
+                          ></i>
+                          <div class="nutritionElementName p-2 fs-5">
+                            Calories
+                          </div>
+                        </div>
+                        <div class="nutritionValue fs-5 fw-bold">${recipeObject.nutrition.calories}</div>
+                      </div>
+                      <div
+                        class="nutritionElement w-100 p-2 d-flex flex-row align-items-center justify-content-between"
+                      >
+                        <div
+                          class="nutritionElementIcon d-flex flex-row align-items-center justify-content-start"
+                        >
+                          <i
+                            class="fa-solid fa-wheat-awn fs-4 text-success-emphasis bg-secondary-subtle rounded-3 p-2 text-center"
+                          ></i>
+                          <div class="nutritionElementName p-2 fs-5">
+                            Carbohydrates
+                          </div>
+                        </div>
+                        <div class="nutritionValue fs-5 fw-bold">${recipeObject.nutrition.carbs}</div>
+                      </div>
+                      <div
+                        class="nutritionElement w-100 p-2 d-flex flex-row align-items-center justify-content-between"
+                      >
+                        <div
+                          class="nutritionElementIcon d-flex flex-row align-items-center justify-content-start"
+                        >
+                          <i
+                            class="fa-solid fa-seedling fs-4 text-success-emphasis bg-secondary-subtle rounded-3 p-2 text-center"
+                          ></i>
+                          <div class="nutritionElementName p-2 fs-5">Fiber</div>
+                        </div>
+                        <div class="nutritionValue fs-5 fw-bold">${recipeObject.nutrition.fiber}</div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="div2 col-12 col-md-6 d-flex flex-column align-items-start my-3"
+                    >
+                      <div
+                        class="nutritionElement w-100 p-2 d-flex flex-row align-items-center justify-content-between"
+                      >
+                        <div
+                          class="nutritionElementIcon d-flex flex-row align-items-center justify-content-start"
+                        >
+                          <i
+                            class="fa-solid fa-dumbbell fs-4 text-success-emphasis bg-secondary-subtle rounded-3 p-2 text-center"
+                          ></i>
+                          <div class="nutritionElementName p-2 fs-5">
+                            Protein
+                          </div>
+                        </div>
+                        <div class="nutritionValue fs-5 fw-bold">${recipeObject.nutrition.protein}</div>
+                      </div>
+                      <div
+                        class="nutritionElement w-100 p-2 d-flex flex-row align-items-center justify-content-between"
+                      >
+                        <div
+                          class="nutritionElementIcon d-flex flex-row align-items-center justify-content-start"
+                        >
+                          <i
+                            class="fa-solid fa-droplet fs-4 text-success-emphasis bg-secondary-subtle rounded-3 p-2 text-center"
+                          ></i>
+                          <div class="nutritionElementName p-2 fs-5">Fat</div>
+                        </div>
+                        <div class="nutritionValue fs-5 fw-bold">${recipeObject.nutrition.fat}</div>
+                      </div>
+                      <div
+                        class="nutritionElement w-100 p-2 d-flex flex-row align-items-center justify-content-between"
+                      >
+                        <div
+                          class="nutritionElementIcon d-flex flex-row align-items-center justify-content-start"
+                        >
+                          <i
+                            class="fa-solid fa-cube fs-4 text-success-emphasis bg-secondary-subtle rounded-3 p-2 text-center"
+                          ></i>
+                          <div class="nutritionElementName p-2 fs-5">
+                            Sodium
+                          </div>
+                        </div>
+                        <div class="nutritionValue fs-5 fw-bold">${recipeObject.nutrition.sodium}</div>
+                      </div>
+                    </div>
+                  </div>`;
+  nutriList.innerHTML = cartoona;
+}
+
+function FillChefTips(recipeObject) {
+  let chefTips = document.getElementById("chef-tips");
+  let cartoona = ``;
+
+  for (let index = 0; index < recipeObject.tips.length; index++) {
+    const element = recipeObject.tips[index];
+    cartoona += `<div class="d-flex flex-row align-items-start">
+                    <div
+                      class="bgOrange text-white rounded-circle p-2 mt-3 d-flex align-items-center justify-content-center"
+                      style="aspect-ratio: 1; height: 100%"
+                    >
+                      ${index + 1}
+                    </div>
+                    <div
+                      class="p-2 m-2 d-flex align-items-center justify-content-center"
+                    >
+                      ${element}
+                    </div>
+                  </div>`;
+  }
+  chefTips.innerHTML = cartoona;
+}
 function FillRecipeInfo(recipeObject) {
   FillRecipeImage(recipeObject);
   FillRecipeRating(recipeObject);
   FillRecipeCookingTime(recipeObject);
   FillRecipeTitle(recipeObject);
+  FillIngredientList(recipeObject);
+  FillInstructionList(recipeObject);
+  FillNutritionList(recipeObject);
+  FillChefTips(recipeObject);
 }
 
 function getRandomRecipeIndex() {
