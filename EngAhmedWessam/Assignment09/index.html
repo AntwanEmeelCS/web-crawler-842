@@ -3,15 +3,295 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>ContactHub</title>
     <link rel="stylesheet" href="./styles/bootstrap.min.css" />
     <link rel="stylesheet" href="./styles/fa-all.min.css" />
     <link rel="stylesheet" href="./styles/sweetalert2.min.css" />
     <link rel="stylesheet" href="./styles/main.css" />
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container-fluid">
+        <div class="siteHeading d-flex flex-row">
+          <div
+            class="iconRounded d-flex align-items-center border rounded-3 p-2 m-3"
+          >
+            <i class="fa-solid fa-address-book text-white fs-4"></i>
+          </div>
+          <div class="siteInfo d-flex flex-column">
+            <div class="siteTitle">
+              <h1 class="fs-4 fw-bold text-black pt-3">
+                Contact<span>Hub</span>
+              </h1>
+            </div>
+            <div class="siteSubtitle">
+              <p class="text-secondary py-0 my-0">Smart Contact Manager</p>
+            </div>
+          </div>
+        </div>
+        <div class="sep flex-grow-1"></div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse flex-grow-0 pe-3"
+          id="navbarNavDropdown"
+        >
+          <ul class="navbar-nav align-content-center">
+            <li class="nav-item py-lg-3">
+              <a class="nav-link active" aria-current="page" href="#">
+                <div
+                  id="btnAddContact"
+                  class="linkItem d-flex flex-row align-items-center justify-content-center px-3 py-2 border rounded-3 fs-6"
+                >
+                  <i class="fa-solid fa-plus text-white"></i>
+                  <span class="text-white">Add Contact</span>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item py-lg-3">
+              <a class="nav-link" href="#"
+                ><div
+                  class="linkItem d-flex flex-row align-items-center justify-content-start"
+                >
+                  <i
+                    class="fa-solid fa-bell fs-6 px-2 pt-2 text-secondary-emphasis"
+                  ></i></div
+              ></a>
+            </li>
+            <li class="nav-item py-lg-3">
+              <a class="nav-link" href="#"
+                ><div
+                  class="linkItem d-flex flex-row align-items-center justify-content-start"
+                >
+                  <i
+                    class="fa-solid fa-gear fs-6 px-2 pt-2 text-secondary-emphasis"
+                  ></i></div
+              ></a>
+            </li>
+            <li class="nav-item py-lg-3">
+              <a class="nav-link" href="#"
+                ><div
+                  class="linkItem d-flex flex-row align-items-center justify-content-start px-4"
+                >
+                  <img
+                    src="./images/profile.jpg"
+                    alt="Profile Image"
+                    srcset=""
+                    class="rounded-3 border-2"
+                  /></div
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <div
+            class="statisticsElement p-3 border border-2 border-secondary rounded-3 flex-grow-1 mx-2"
+          >
+            <div
+              class="d-flex flex-row align-items-center justify-content-start"
+            >
+              <div
+                class="statisticsIcon totalIcon d-flex align-items-center justify-content-center border rounded-3 p-3"
+              >
+                <i class="fa-solid fa-users text-white fs-5"></i>
+              </div>
+              <div
+                class="statisticsRow d-flex flex-column align-items-center justify-content-start p-2"
+              >
+                <span class="fs-6 text-secondary">TOTAL</span>
+                <span id="totalContactCount" class="fs-4 text-black">7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div
+            class="statisticsElement p-3 border border-2 border-secondary rounded-3 flex-grow-1 mx-2"
+          >
+            <div
+              class="d-flex flex-row align-items-center justify-content-start"
+            >
+              <div
+                class="statisticsIcon favouritesIcon d-flex align-items-center justify-content-center border rounded-3 p-3"
+              >
+                <i class="fa-solid fa-star text-white fs-5"></i>
+              </div>
+              <div
+                class="statisticsRow d-flex flex-column align-items-center justify-content-start p-2"
+              >
+                <span class="fs-6 text-secondary">Favorites</span>
+                <span id="totalFavouritesCount" class="fs-4 text-black">7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div
+            class="statisticsElement p-3 border border-2 border-secondary rounded-3 flex-grow-1 mx-2"
+          >
+            <div
+              class="d-flex flex-row align-items-center justify-content-start"
+            >
+              <div
+                class="statisticsIcon emergencyIcon d-flex align-items-center justify-content-center border rounded-3 p-3"
+              >
+                <i class="fa-solid fa-heart-pulse text-white fs-5"></i>
+              </div>
+              <div
+                class="statisticsRow d-flex flex-column align-items-center justify-content-start p-2"
+              >
+                <span class="fs-6 text-secondary">Emergency</span>
+                <span id="totalEmergencyCount" class="fs-4 text-black">7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 pt-4">
+        <div class="col-md-8">
+          <div
+            class="contactContainer p-4 border border-2 border-secondary rounded-3 bg-light"
+          >
+            <div class="header">
+              <div class="siteInfo d-flex flex-column">
+                <div class="siteTitle">
+                  <h2 class="fs-3 fw-bold text-black pt-3">All Contacts</h2>
+                </div>
+                <div class="siteSubtitle">
+                  <p class="text-secondary py-0 my-0 fs-6">
+                    Manage and organize your contacts
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="txtSearch">
+              <input
+                id="searchInput"
+                type="text"
+                placeholder="Search by name, phone, or email..."
+                class="w-100 p-2 my-2 bg-white border border-1 rounded-2 border-secondary"
+              />
+            </div>
+            <div class="container py-3">
+              <div id="contactCards" class="row"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div
+            class="sticky-top d-flex flex-column align-items-start justify-content-center bg-white"
+            style="top: 20px; z-index: 1020"
+          >
+            <div
+              class="favoritesList border border-2 border-secondary rounded-3 bg-white w-100 pb-3 mb-3"
+            >
+              <div class="favHeader d-flex flex-row">
+                <div
+                  class="iconRounded d-flex align-items-center border rounded-3 p-2 m-3"
+                >
+                  <i class="fa-solid fa-star text-white fs-6"></i>
+                </div>
+                <div class="siteInfo d-flex flex-column">
+                  <div class="siteTitle">
+                    <h2 class="fs-6 fw-bold text-black pt-3">Favourites</h2>
+                  </div>
+                  <div
+                    class="siteSubtitle text-secondary"
+                    style="font-size: 0.75rem"
+                  >
+                    <p class="text-secondary py-0 my-0">
+                      Quick access to starred contacts
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div id="favList" class="favDetails"></div>
+            </div>
+            <div
+              class="emergencyList border border-2 border-secondary rounded-3 bg-white w-100 pb-3 mb-3"
+            >
+              <div class="emerHeader d-flex flex-row">
+                <div
+                  class="iconRounded d-flex align-items-center border rounded-3 p-2 m-3"
+                >
+                  <i class="fa-solid fa-heart-pulse text-white fs-6"></i>
+                </div>
+                <div class="siteInfo d-flex flex-column">
+                  <div class="siteTitle">
+                    <h2 class="fs-6 fw-bold text-black pt-3">Emergency</h2>
+                  </div>
+                  <div
+                    class="siteSubtitle text-secondary"
+                    style="font-size: 0.75rem"
+                  >
+                    <p class="text-secondary py-0 my-0">
+                      Important contacts for urgent calls
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div id="emerList" class="emerDetails">
+                <!-- <div
+                  class="emerElement d-flex flex-row justify-content-between align-items-center"
+                >
+                  <div class="p1 d-flex flex-row">
+                    <div
+                      class="d-flex align-items-center border rounded-3 p-2 m-3"
+                      style="background-color: rgb(6, 78, 116)"
+                    >
+                      <div class="contactInitials text-white fw-bold">MZ</div>
+                    </div>
+                    <div class="d-flex flex-column">
+                      <div>
+                        <h3 class="fs-6 fw-bold text-black pt-3">
+                          Miriam Zimmerman
+                        </h3>
+                      </div>
+                      <div
+                        class="siteSubtitle text-secondary"
+                        style="font-size: 0.75rem"
+                      >
+                        <p class="text-secondary py-0 my-0">01258899634</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="p2 p-2 m-3 d-flex align-items-center justify-content-center rounded-3"
+                  >
+                    <a href="tel:01258899634"
+                      ><i class="fa-solid fa-phone"></i
+                    ></a>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trial Playground -->
+    </div>
+
     <script src="./scripts/bootstrap.bundle.min.js"></script>
     <script src="./scripts/sweetalert2.all.min.js"></script>
-    <script src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/localStorageWorker.js"></script>
+    <script src="./scripts/main.js" type="module"></script>
   </body>
 </html>

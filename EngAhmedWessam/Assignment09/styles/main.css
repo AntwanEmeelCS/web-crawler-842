@@ -1,0 +1,133 @@
+@font-face {
+  font-family: Inter;
+  src: url(../fonts/Inter/Inter-VariableFont.ttf);
+}
+
+* {
+  font-family: Inter, sans-serif;
+}
+
+.navbar {
+  .container-fluid {
+    .siteHeading {
+      .iconRounded {
+        background-color: #6832fa;
+      }
+      .siteInfo {
+        .siteTitle {
+          h1 {
+            span {
+              color: #7f22fe;
+            }
+          }
+        }
+        .siteSubtitle {
+          font-size: 0.75rem;
+        }
+      }
+    }
+    .collapse {
+      ul {
+        li {
+          a {
+            #btnAddContact {
+              background-color: #5638f8;
+              font-weight: bold;
+              font-size: 0.875rem;
+              transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+              &:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+              }
+            }
+            .linkItem {
+              img {
+                width: 2.5rem;
+                height: 2.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.statisticsElement {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  .totalIcon {
+    background-color: #1965fe;
+  }
+  .favouritesIcon {
+    background-color: #ff9000;
+  }
+  .emergencyIcon {
+    background-color: #f91447;
+  }
+}
+
+.favoritesList {
+  .favHeader {
+    .iconRounded {
+      background-color: #ff8a00;
+    }
+  }
+  .favElement {
+    &:hover {
+      .p2 {
+        background-color: #00bc7d;
+        a {
+          i {
+            color: white;
+          }
+        }
+      }
+    }
+    .p2 {
+      background-color: #d0fae5;
+      a {
+        i {
+          color: #009966;
+        }
+      }
+    }
+  }
+}
+
+.emergencyList {
+  .emerHeader {
+    .iconRounded {
+      background-color: #f20135;
+    }
+  }
+  .emerDetails {
+    .emerElement {
+      &:hover {
+        .p2 {
+          background-color: #ff2056;
+          a {
+            i {
+              color: white;
+            }
+          }
+        }
+      }
+      .p2 {
+        background-color: #ffe4e6;
+        a {
+          i {
+            color: #ec003f;
+          }
+        }
+      }
+    }
+  }
+}
