@@ -1,0 +1,22 @@
+.btn-custom-save {
+  background-color: #6831fa;
+  color: #ffffff;
+  border: none;
+}
+.btn-custom-save:hover {
+  background-color: #5524d4;
+  color: #ffffff;
+}
+.btn-custom-cancel {
+  background-color: #ffffff;
+  color: #6c757d;
+  border: 1px solid #ced4da;
+}
+.btn-custom-cancel:hover {
+  background-color: #f8f9fa;
+  color: #495057;
+}
+.swal2-popup {
+  border-radius: 1rem;
+  padding: 1.5rem;
+}

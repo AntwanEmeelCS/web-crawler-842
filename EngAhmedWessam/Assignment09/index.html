@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ContactHub</title>
+    <link rel="shortcut icon" href="./images/favicon.png" />
     <link rel="stylesheet" href="./styles/bootstrap.min.css" />
     <link rel="stylesheet" href="./styles/fa-all.min.css" />
     <link rel="stylesheet" href="./styles/sweetalert2.min.css" />
     <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/addContactModal.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -98,7 +100,7 @@
 
     <div class="container">
       <div class="row g-3">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-lg-4">
           <div
             class="statisticsElement p-3 border border-2 border-secondary rounded-3 flex-grow-1 mx-2"
           >
@@ -119,7 +121,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-lg-4">
           <div
             class="statisticsElement p-3 border border-2 border-secondary rounded-3 flex-grow-1 mx-2"
           >
@@ -140,7 +142,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-lg-4">
           <div
             class="statisticsElement p-3 border border-2 border-secondary rounded-3 flex-grow-1 mx-2"
           >
@@ -163,10 +165,10 @@
         </div>
       </div>
 
-      <div class="row g-4 pt-4">
-        <div class="col-md-8">
+      <div class="row g-2 pt-4">
+        <div class="col-lg-8">
           <div
-            class="contactContainer p-4 border border-2 border-secondary rounded-3 bg-light"
+            class="contactContainer p-4 mb-4 border border-2 border-secondary rounded-3 bg-light"
           >
             <div class="header">
               <div class="siteInfo d-flex flex-column">
@@ -194,7 +196,7 @@
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-lg-4">
           <div
             class="sticky-top d-flex flex-column align-items-start justify-content-center bg-white"
             style="top: 20px; z-index: 1020"
@@ -285,13 +287,12 @@
           </div>
         </div>
       </div>
-
-      <!-- Trial Playground -->
     </div>
 
     <script src="./scripts/bootstrap.bundle.min.js"></script>
     <script src="./scripts/sweetalert2.all.min.js"></script>
     <script type="module" src="./scripts/localStorageWorker.js"></script>
     <script src="./scripts/main.js" type="module"></script>
+    <script src="./scripts/trial.js" type="module"></script>
   </body>
 </html>
